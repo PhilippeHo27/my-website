@@ -29,8 +29,8 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
       </ul>
     </div>
   </nav>
@@ -38,10 +38,7 @@
     <section class="resume-section" id="about">
       <div class="resume-section-content">
         <h1 class="mb-0 custom-header"> Philippe Ho </h1>
-        <div class="subheading mb-5 text-primary">
-          3230 rue Joseph Montreal, H4G 1H7 · 514 713-5487 ·
-          <a href="mailto:name@email.com">philippeho27@gmail.com</a>
-        </div>
+        <div class="subheading mb-5"></div>
         <p class="lead mb-5">
           Based in Montréal, Canada, I'm a software developer with a focus on game development. My experience includes shipping a commercial game title using Unity, and I'm currently building projects with both Unity and Unreal Engine.
         </p>
@@ -49,10 +46,23 @@
             Actively seeking new opportunities in game development where I can contribute my experience while continuing to grow technically. Currently working on multiplayer game projects to expand my expertise in networked gameplay and cloud infrastructure.
         </p>
         <div class="social-icons">
-          <a class="social-icon" href="https://www.linkedin.com/in/philippe-ho"><i class="fab fa-linkedin-in"></i></a>
-          <a class="social-icon" href="https://github.com/PhilippeHo27"><i class="fab fa-github"></i></a>
+          <a class="social-icon" href="https://www.linkedin.com/in/philippe-ho"><i class="fab fa-linkedin"></i></a>
+          <a class="social-icon" href="https://github.com/PhilippeHo27"><i class="fab fa-square-github"></i></a>
+          <a class="social-icon" href="#" onclick="openResume(); return false;"><i class="fas fa-file-lines"></i></a>
+          <a class="social-icon" id="contact-info-btn" onclick="showContactPopup(event)"><i class="fas fa-address-card"></i></a>
+        </div>      
+        
+        <div id="contact-popup" class="contact-popup">
+          <div class="popup-content">
+            <span class="close-popup" onclick="closeContactPopup()">&times;</span>
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-envelope"></i> philippeho27@gmail.com</p>
+            <p><i class="fas fa-phone"></i> (514)713-5487</p>
+            <p><i class="fas fa-map-marker-alt"></i> Montréal, QC</p>
+          </div>
         </div>
-        <h3 class="mb-0 custom-header project-title" style="margin-top: 2rem;">Skills</h3>
+
+        <div style="margin-top: 3rem;"></div>
         <ul class="list-inline dev-icons">
             <li class="list-inline-item"><i class="devicon-cplusplus-plain colored"></i></li>
             <li class="list-inline-item"><i class="devicon-csharp-plain colored"></i></li>
@@ -73,106 +83,132 @@
         <h2 class="mb-5 custom-header">Experience</h2>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="flex-grow-1">
-            <h3 class="mb-3 custom-header">Téléfix Productions - Game Programmer</h3>
+            <h3 class="mb-0 custom-header">Téléfix Productions - Game Programmer</h3>
+            <div class="subheading mb-3">Game Programmer</div>
             <p class="lead">Developed a Steam-published construction game, implementing essential gameplay systems including character movement, save functionality, shader effects, UI/UX, and sound integration.</p>
             <a href="https://store.steampowered.com/app/3113740/Dont_Drop_The_Wall_Jack/" target="_blank" rel="noopener">
-              <img src="assets/img/telefix.png" alt="Téléfix Game Cover" style="width:500px; height:auto;">
+              <div class="game-video-container">
+                <video autoplay loop muted playsinline class="game-video">
+                  <source src="assets/img/dontdrop.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </a>
           </div>
-          <div class="flex-shrink-0"><span class="text-primary date-text">January 2024 - November 2024</span></div>
+          <div class="flex-shrink-0"><span class="subheading date-text">January 2024 - November 2024</span></div>
         </div>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="flex-grow-1">
-            <h3 class="mb-3 custom-header">Small Detour Games - Programmer Intern</h3>
+            <h3 class="mb-0 custom-header">Small Detour Games - Programmer Intern</h3>
+            <div class="subheading mb-3">Programmer Intern</div>
             <p class="lead">Worked on implementing features including a hidden NPC relationship meter for tracking growth. Developed trigger points for specific events and interactions.</p>
             <a href="https://store.steampowered.com/app/2707880/Troubadours/" target="_blank" rel="noopener">
-              <img src="assets/img/troubadours.jpg" alt="Troubadours Game" style="width:500px; height:auto;">
+              <div class="game-video-container">
+                <video autoplay loop muted playsinline class="game-video">
+                  <source src="assets/img/troubadour.webm" type="video/webm">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </a>
           </div>
-          <div class="flex-shrink-0"><span class="text-primary date-text">March 2023 - June 2023</span></div>
+          <div class="flex-shrink-0"><span class="subheading date-text">March 2023 - June 2023</span></div>
         </div>
       </div>
-    </section>
+    </section>    
+    <hr class="m-0">
+    <section class="resume-section" id="projects">
+      <div class="resume-section-content">
+        <h2 class="mb-5 custom-header">Projects</h2>
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="flex-grow-1">
+            <h3 class="mb-0 custom-header">Unity WebSocket Multiplayer Project</h3>
+            <div class="subheading mb-3 subheading">A workshop for Prototypes</div>              
+            <ul class="list-styled">
+              <li>Workshop for a couple of games to test out multiplayer functionalities</li>
+              <li>Implemented real-time gameplay using WebSocket communication</li>
+              <li>Deployed on AWS EC2 with always-on server availability</li>
+              <li>Utilized JavaScript for web integration and Linux for server management</li>
+            </ul>
+            <div class="game-preview-container mb-3 text-center">
+              <a href="https://philippeho27.github.io/ChatroomWars/" target="_blank" rel="noopener noreferrer" class="game-preview-link">
+                <div class="play-demo-button">
+                  Click to Play
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>  
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="flex-grow-1">
+            <h3 class="mb-0 custom-header">Dedicated Server &amp; Cloud Backend Masterclass</h3>
+            <div class="subheading mb-3">AWS &amp; Unreal Engine Course</div>
+            <p class="lead">
+              A comprehensive course project focused on deploying dedicated servers and creating robust cloud backend solutions for Unreal Engine games. Topics include compiling Unreal Engine from source, integrating GameLift, making API calls via the AWS CLI, setting up secure user pools with Amazon Cognito, building REST APIs with Amazon API Gateway, and managing persistent game data with DynamoDB. This project is designed for scaling multiplayer experiences to a global audience.
+            </p>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="flex-grow-1">
+            <h3 class="mb-0 custom-header">Unreal Engine Multiplayer Shooter</h3>
+            <div class="subheading mb-3">Competitive Multiplayer C++ Game</div>
+            <p class="lead">
+              Developed a competitive multiplayer shooter using Unreal Engine. The project features matchmaking sessions, a custom plugin to convert single-player projects into multiplayer experiences, advanced replication techniques, and lag compensation (including client-side prediction and server-side rewind). It also includes a diverse arsenal of weapons, pickups, and a fully functional HUD — all optimized for high-performance and scalability.
+            </p>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div class="flex-grow-1">
+            <h3 class="mb-0 custom-header">UE5 Action-RPG Open World Adventure</h3>
+            <div class="subheading mb-3">C++ Open World Game Development</div>
+            <p class="lead">
+              Built an action-RPG open world game entirely in Unreal Engine 5. This project includes third-person combat with melee weapons, dynamic enemy AI, health bars, and immersive open world design using Quixel Megascans. Enhanced features such as motion warping, MetaSounds, particle effects, and advanced animation systems were integrated alongside best coding practices and optimal data structures.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
     <hr class="m-0">
     <section class="resume-section" id="education">
-        <div class="resume-section-content">
-          <h2 class="mb-5 custom-header">Education</h2>
-          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0 custom-header">Collège de Bois-de-Boulogne</h3>
-              <div class="subheading mb-3">A.E.C. - Video Game Programming</div>
-              <ul class="list-styled">
-                <li>Learned Unreal and Unity game engines.</li>
-                <li>Programming in C++ and C#.</li>
-                <li>Version control with GitHub and Perforce.</li>
-              </ul>
-            </div>
-            <div class="flex-shrink-0"><span class="text-primary date-text">2022 - 2023</span></div>
+      <div class="resume-section-content">
+        <h2 class="mb-5 custom-header">Education</h2>
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="flex-grow-1">
+            <h3 class="mb-0 custom-header project-title">Collège de Bois-de-Boulogne</h3>
+            <div class="subheading mb-3">A.E.C. - Video Game Programming</div>
+            <ul class="list-styled">
+              <li>Learned Unreal and Unity game engines.</li>
+              <li>Programming in C++ and C#.</li>
+              <li>Version control with GitHub and Perforce.</li>
+            </ul>
           </div>
-          <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-              <h3 class="mb-0 custom-header">Concordia University</h3>
-              <div class="subheading mb-3">Bachelors - Civil Engineering (56 completed credits)</div>
-              <div>Developed strong analytical and problem-solving abilities.</div>
-            </div>
-            <div class="flex-shrink-0"><span class="text-primary date-text">2008 - 2011</span></div>
-          </div>
+          <div class="flex-shrink-0"><span class="subheading date-text">2022 - 2023</span></div>
         </div>
-      </section>
-      <hr class="m-0">
-      <section class="resume-section" id="projects">
-        <div class="resume-section-content">
-          <h2 class="mb-0 custom-header">Projects</h2>
-          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0 custom-header project-title">Unity WebSocket Multiplayer Project</h3>
-              <div class="subheading mb-3 gradient-subheading">A workshop for Prototypes</div>              
-              <ul class="list-styled">
-                <li>Workshop for a couple of games to test out multiplayer functionalities</li>
-                <li>Implemented real-time gameplay using WebSocket communication</li>
-                <li>Deployed on AWS EC2 with always-on server availability</li>
-                <li>Utilized JavaScript for web integration and Linux for server management</li>
-              </ul>
-              <div class="game-preview-container mb-3 text-center">
-                <a href="https://philippeho27.github.io/ChatroomWars/" target="_blank" rel="noopener noreferrer" class="game-preview-link">
-                  <div class="play-demo-button">
-                    Click to Play Demo
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>  
-          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0 custom-header project-title">Dedicated Server &amp; Cloud Backend Masterclass</h3>
-              <div class="subheading mb-3">AWS &amp; Unreal Engine Course</div>
-              <p class="lead">
-                A comprehensive course project focused on deploying dedicated servers and creating robust cloud backend solutions for Unreal Engine games. Topics include compiling Unreal Engine from source, integrating GameLift, making API calls via the AWS CLI, setting up secure user pools with Amazon Cognito, building REST APIs with Amazon API Gateway, and managing persistent game data with DynamoDB. This project is designed for scaling multiplayer experiences to a global audience.
-              </p>
-            </div>
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div class="flex-grow-1">
+            <h3 class="mb-0 custom-header project-title">Concordia University</h3>
+            <div class="subheading mb-3">Bachelors - Civil Engineering (56 completed credits)</div>
+            <div class ="lead">Developed strong analytical and problem-solving abilities.</div>
           </div>
-          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0 custom-header project-title">Unreal Engine Multiplayer Shooter</h3>
-              <div class="subheading mb-3">Competitive Multiplayer C++ Game</div>
-              <p class="lead">
-                Developed a competitive multiplayer shooter using Unreal Engine. The project features matchmaking sessions, a custom plugin to convert single-player projects into multiplayer experiences, advanced replication techniques, and lag compensation (including client-side prediction and server-side rewind). It also includes a diverse arsenal of weapons, pickups, and a fully functional HUD — all optimized for high-performance and scalability.
-              </p>
-            </div>
-          </div>
-          <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-              <h3 class="mb-0 custom-header project-title">UE5 Action-RPG Open World Adventure</h3>
-              <div class="subheading mb-3">C++ Open World Game Development</div>
-              <p class="lead">
-                Built an action-RPG open world game entirely in Unreal Engine 5. This project includes third-person combat with melee weapons, dynamic enemy AI, health bars, and immersive open world design using Quixel Megascans. Enhanced features such as motion warping, MetaSounds, particle effects, and advanced animation systems were integrated alongside best coding practices and optimal data structures.
-              </p>
-            </div>
-          </div>
+          <div class="flex-shrink-0"><span class="subheading date-text">2008 - 2011</span></div>
         </div>
-      </section>
+      </div>
+  </section>
   </div>
+
+  <div id="resumeOverlay" class="overlay" style="display: none;">
+    <span class="close" onclick="closeResume()">&times;</span>
+    <div class="pdf-container">
+      <canvas id="pdf-render"></canvas>
+      <div class="resume-controls">
+        <button onclick="downloadPDF()">Download PDF</button>
+        <button onclick="printPDF()">Print PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/scripts.js"></script>
+  
 </body>
 </html>
