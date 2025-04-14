@@ -75,10 +75,7 @@ function showContactPopup(event) {
   }
   
   function openResume() {
-    var popup = document.getElementById("resumePopup");
-    var iframe = document.getElementById("pdfFrame");
-    iframe.src = "assets/img/resume.pdf";
-    popup.style.display = "block";
+    window.open('resume/index.html', '_blank');
   }
   
   // Close the popup when clicking the close button
@@ -88,20 +85,16 @@ function showContactPopup(event) {
   
   // Close the popup when clicking outside of it
   window.onclick = function(event) {
-    var popup = document.getElementById("pdfModal");
+    var popup = document.querySelector('.contact-popup');
     if (event.target == popup) {
-      popup.style.display = "none";
+      closeContactPopup();
     }
   }
  
   // PDF.js setup
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
 
-function openResume() {
-  document.getElementById("resumeOverlay").style.display = "flex";
-  renderPDF();
-}
-
+/*
 function closeResume() {
   document.getElementById("resumeOverlay").style.display = "none";
 }
@@ -144,8 +137,6 @@ function renderPDF() {
   });
 }
 
-
-
 function downloadPDF() {
   var link = document.createElement('a');
   link.href = 'assets/img/resume.pdf';
@@ -158,18 +149,6 @@ function printPDF() {
   win.focus();
   win.print();
 }
+*/
 
-// Close the popup when clicking the close button
-document.querySelector(".close").onclick = closeResume;
-
-// Close the popup when clicking outside of it
-window.onclick = function(event) {
-  var overlay = document.getElementById("resumeOverlay");
-  if (event.target == overlay) {
-    closeResume();
-  }
-}
-
-function closeContactPopup() {
-  document.querySelector('.contact-popup').style.display = 'none';
-}
+document.querySelector(".close").onclick = closeContactPopup;

@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans 3', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    max-width: 8.5in;
+    height: 11in;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Floating controls */
+.floating-controls {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+.control-icon {
+    background-color: #4fc3f7;
+    color: #191A1A;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.control-icon i {
+    font-size: 20px;
+}
+
+.control-icon:hover {
+    background-color: #3aa8d9;
+    transform: scale(1.05);
+}
+
+.lang-icon {
+    position: relative;
+}
+
+#current-lang {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #2B2D31;
+    color: white;
+    font-size: 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+@media print {
+    .floating-controls {
+        display: none;
+    }
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 30%;
+    background-color: #2B2D31;
+    color: #CBCED2;
+    padding: 20px;
+    height: 11in;
+    overflow-y: hidden;
+}
+
+.content {
+    width: 70%;
+    padding: 20px;
+    height: 11in;
+    overflow-y: hidden;
+}
+
+.sidebar header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.sidebar header h1 {
+    font-size: 1.75rem;
+    color: #b2bbc7;
+    margin-bottom: 2px;
+}
+
+.sidebar header h2 {
+    font-size: 1.3rem;
+    color: #b2bbc7;
+    font-weight: 500;
+}
+
+.profile-img {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 3px solid #b2bbc7;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: #b2bbc7;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #123f74;
+}
+
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #b2bbc7;
+    border-bottom: 2px solid #123f74;
+    padding-bottom: 5px;
+}
+
+.sidebar-section h2 i {
+    font-size: 1rem;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.download-btn {
+    background-color: #144781;
+    color: #b2bbc7;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.download-btn:hover {
+    background-color: #235ea2;
+}
+
+/* Main Content Styles */
+.content {
+    width: 70%;
+    padding: 30px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #191A1A;
+    margin-bottom: 5px;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    color: #123f74;
+    font-weight: 500;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1.25rem;
+    color: #191A1A;
+    border-bottom: 4px solid #123f74;
+    padding-bottom: 1px;
+    margin-bottom: 15px;
+}
+
+.job, .project, .school {
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 1.05rem;
+    color: #191A1A;
+    /* margin-bottom: 5px; */
+}
+
+.job-period, .edu-period {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #123f74;
+    text-decoration: none;
+}
+
+p, li {
+    font-size: 0.91rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Print-specific styling */
+@media print {
+    /* Set exact page dimensions with no margins */
+    @page {
+      size: letter;
+      margin: 0;
+    }
+    
+    /* Hide elements not needed for print */
+    .floating-controls {
+      display: none !important;
+    }
+    
+    /* Force exact dimensions */
+    body, html {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    .container {
+      width: 8.5in !important;
+      height: 11in !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      overflow: hidden !important;
+    }
+    
+    /* Ensure colors print properly */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    
+    /* Fix link colors */
+    a, .social-links a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    
+    /* Ensure sidebar prints with background color */
+    .sidebar {
+      background-color: #2B2D31 !important;
+      color: #CBCED2 !important;
+      print-color-adjust: exact !important;
+    }
+}

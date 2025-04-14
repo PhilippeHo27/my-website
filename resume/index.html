@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="pageTitle">Philippe Ho - Programmer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="translations.js"></script>
+</head>
+<body>
+    <div class="floating-controls">
+        <button id="download-pdf" class="control-icon download-icon" title="Download as PDF">
+            <i class="fas fa-file-download"></i>
+        </button>
+        <button id="lang-toggle" class="control-icon lang-icon" title="Switch Language">
+            <i class="fas fa-language"></i>
+            <span id="current-lang">EN</span>
+        </button>
+    </div>
+    <div class="container" id="resume-content">
+        <aside class="sidebar">
+            <header>
+                <h1>Philippe Ho</h1>
+                <h2 data-translate="role">Programmer</h2>
+            </header>
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="../assets/img/profile2.jpg" alt="Philippe Ho">
+                </div>
+                <div class="contact-info">
+                    <p><i class="far fa-envelope fa-fw"></i> philippeho27@gmail.com</p>
+                    <p><i class="fas fa-phone fa-fw"></i> (514) 713-5487</p>
+                    <p><i class="fas fa-map-marker-alt fa-fw"></i> <span data-translate="location">Montréal, Québec</span></p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/PhilippeHo27"><i class="fab fa-github fa-fw"></i> GitHub</a>
+                    <a href="https://linkedin.com/in/philippe-ho"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a>
+                    <a href="https://discord.com"><i class="fab fa-discord fa-fw"></i> Discord</a>
+                    <a href="../index.html"><i class="fas fa-globe fa-fw"></i> <span data-translate="website">Website</span></a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h2><i class="fas fa-earth-americas" style="margin-right: 8px;"></i> <span data-translate="languages">Languages</span></h2>
+                <p data-translate="languagesList">French, English</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h2><i class="fas fa-laptop-code" style="margin-right: 8px;"></i> <span data-translate="skills">Skills</span></h2>
+                <p>C++ • C# • Unity • Unreal Engine •<br>
+                GitHub • AWS EC2 • JavaScript •<br> 
+                Python • Perforce</p>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-gamepad" style="margin-right: 8px;"></i> <span data-translate="gamingInterests">Gaming Interests</span></h2>
+                <p>MMORPG • RTS • MOBA • FPS<br></p>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-robot" style="margin-right: 8px;"></i> <span data-translate="genAITools">GEN AI Tools</span></h2>
+                <p>GPT-4o • Claude 3.7 • Midjourney<br>
+                </p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="experience">
+                <h2 data-translate="experience">PROFESSIONAL EXPERIENCE</h2>
+                
+                <div class="job">
+                    <h3 data-translate="job1Title">Téléfix productions, Game Programmer</h3>
+                    <div class="job-period" data-translate="job1Period">01/2024-11/2024 | Montréal, Canada</div>
+                    <ul>
+                        <li data-translate="job1Point1">Sole developer handling all technical implementation for a Steam-released game</li>
+                        <li data-translate="job1Point2">Implemented complete codebase: gameplay systems, UI, audio, asset integration</li>
+                        <li data-translate="job1Point3">Contributed to game design, QA and debugging</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3 data-translate="job2Title">Small Detour Games, Programmer Intern</h3>
+                    <div class="job-period" data-translate="job2Period">04/2023-07/2023 | Montréal, Canada</div>
+                    <ul>
+                        <li data-translate="job2Point1">Developed NPC systems including relationship tracking mechanics and town navigation AI</li>
+                        <li data-translate="job2Point2">Implemented NavMesh pathfinding system for dynamic NPC movement and animations</li>
+                        <li data-translate="job2Point3">Created various gameplay prototypes and features using Unity</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h3 data-translate="job3Title">Previous Career, Claims Adjuster</h3>
+                    <div class="job-period" data-translate="job3Period">2012 - 2020 | Montréal, Canada</div>
+                    <p data-translate="job3Companies">International Programs Group • Crawford • SCM ClaimsPro</p>
+                    <ul>
+                        <li data-translate="job3Point1">Prior established career in resolving commercial and liability claims</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="projects">
+                <h2 data-translate="projects">PROJECTS</h2>
+                <div class="project">
+                    <h3 data-translate="project1Title">Multiplayer Game in Unity</h3>
+                    <p data-translate="project1Desc">Building a turn based multiplayer game using Unity, WebSocket, and AWS.</p>
+                    <a href="https://philippeho27.github.io/ChatroomWars/" target="_blank" data-translate="project1Link">Click here to try!</a>
+                </div>
+            </section>
+
+            <section class="education">
+                <h2 data-translate="education">EDUCATION</h2>
+                <div class="school">
+                    <h3 data-translate="school1">Collège de Bois-de-Boulogne</h3>
+                    <div class="edu-period" data-translate="school1Period">2022-2023 | Montréal, Canada</div>
+                    <ul>
+                        <li data-translate="school1Point1">Learned Unreal and Unity game engines.</li>
+                        <li data-translate="school1Point2">Programming in C++ and C#.</li>
+                        <li data-translate="school1Point3">Version control with GitHub and Perforce.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="courses">
+                <h2 data-translate="courses">COURSES</h2>
+                <ul class="course-list">
+                    <li data-translate="course1">Dedicated Server & Cloud Backend</li>
+                    <li data-translate="course2">Unreal Engine Multiplayer Shooter</li>
+                    <li data-translate="course3">UE5 Action-RPG Open World Adventure</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -870,7 +870,6 @@ h1, h2, h3, .subheading {
   transition: color 0.2s ease;
 }
 
-
 .nav-link {
     color: var(--discord-text) !important;
 }
