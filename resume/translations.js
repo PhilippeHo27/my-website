@@ -1,116 +1,110 @@
 const translations = {
     en: {
         // Page metadata
-        pageTitle: "Philippe Ho - Programmer",
+        pageTitle: "Philippe Ho - Full-Stack Developer",
         
         // Sidebar
-        role: "Programmer",
+        role: "Full-Stack Developer",
         location: "Montréal, Québec",
         website: "Website",
         languages: "Languages",
-        languagesList: "French, English",
-        skills: "Skills",
-        gamingInterests: "Gaming Interests",
-        genAITools: "GEN AI Tools",
+        languagesList: "English (Fluent), French (Fluent)",
+        llmGenAI: "LLM & GenAI Tools",
+        llmGenAIList: "GPT 4.1, Claude 4.0, Gemini 2.5<br>Windsurf • Suno • Midjourney",
+        cloudAPIs: "Cloud & APIs",
+        cloudAPIsList: "Unity Cloud Code<br>AWS GameLift<br>WebSockets • Spotify API",
+        technicalSkills: "Technical Skills",
+        technicalSkillsList: "C# • C++ • JavaScript • Python<br>Linux • AWS • GitHub •<br>Unity • Unreal Engine",
         
         // Main content sections
-        experience: "PROFESSIONAL EXPERIENCE",
-        projects: "PROJECTS",
-        education: "EDUCATION",
-        courses: "COURSES",
+        summary: "Summary",
+        summaryText: "Full-Stack Developer with experience in client solution delivery, API integration, and system automation. Delivered complete technical projects from concept to deployment, with hands-on experience in cloud platforms and workflow automation.",
+        experience: "Professional Experience",
+        projects: "Projects",
+        education: "Education",
         
-        // Job 1
-        job1Title: "Téléfix productions, Game Programmer",
+        // Job 1 - Updated Ada version
+        job1Title: "Téléfix Productions, Game Programmer",
         job1Period: "01/2024-11/2024 | Montréal, Canada",
-        job1Point1: "Sole developer handling all technical implementation for a Steam-released game",
-        job1Point2: "Implemented complete codebase: gameplay systems, UI, audio, asset integration",
-        job1Point3: "Contributed to game design, QA and debugging",
+        job1Point1: "Delivered completed game released on Steam",
+        job1Point2: "Managed project timeline and resolved technical integration issues",
+        job1Point3: "Implemented workflow logic, UI systems, and asset pipelines using Unity & C#",
+        job1Point4: "Leveraged AI tools for rapid prototyping and technical problem-solving",
         
-        // Job 2
-        job2Title: "Small Detour Games, Programmer Intern",
-        job2Period: "04/2023-07/2023 | Montréal, Canada",
-        job2Point1: "Developed NPC systems including relationship tracking mechanics and town navigation AI",
-        job2Point2: "Implemented NavMesh pathfinding system for dynamic NPC movement and animations",
-        job2Point3: "Created various gameplay prototypes and features using Unity",
+        // Projects - All 4 from Ada version
+        project1Title: "Online Multiplayer Games",
+        project1Desc: "Built multiplayer game using Unity and WebSockets on AWS Linux server. Features automated matchmaking system and complete game session management.",
         
-        // Job 3
-        job3Title: "Previous Career, Claims Adjuster",
-        job3Period: "2012 - 2020 | Montréal, Canada",
-        job3Companies: "International Programs Group • Crawford • SCM ClaimsPro",
-        job3Point1: "Prior established career in resolving commercial and liability claims",
+        project2Title: "Unity Cloud API Integration", 
+        project2Desc: "Integrated Unity Cloud services for turn-based multiplayer platform. Leveraged CloudCode APIs and Unity's lobby system to implement automated matchmaking and game sessions.",
         
-        // Project 1
-        project1Title: "Multiplayer Game in Unity",
-        project1Desc: "Building a turn based multiplayer game using Unity, WebSocket, and AWS.",
-        project1Link: "Click here to try!",
+        project3Title: "Spotify Playlist Automator",
+        project3Desc: "Built Python automation tool to integrate mp3s into playlists.",
+        
+        project4Title: "Multiplayer Networking Systems",
+        project4Desc: "Built competitive multiplayer shooter in Unreal Engine using C++ and networked architecture. Implemented client-server communication, state replication, and real-time event handling across distributed game sessions.",
         
         // Education
-        school1: "Collège de Bois-de-Boulogne",
+        school1Title: "Collège de Bois-de-Boulogne",
         school1Period: "2022-2023 | Montréal, Canada",
-        school1Point1: "Learned Unreal and Unity game engines.",
-        school1Point2: "Programming in C++ and C#.",
-        school1Point3: "Version control with GitHub and Perforce.",
+        school1Desc: "Game Development Program, worked with Unity & Unreal Engine. Learned C++, C#, GitHub, Agile Methodology and 3-months internship at an indie company.",
         
-        // Courses
-        course1: "Dedicated Server & Cloud Backend",
-        course2: "Unreal Engine Multiplayer Shooter",
-        course3: "UE5 Action-RPG Open World Adventure"
+        school2Title: "Concordia University",
+        school2Period: "2008-2011 | Montréal, Canada",
+        school2Point1: "Civil Engineering - 56 Completed credits"
     },
     fr: {
         // Page metadata
-        pageTitle: "Philippe Ho - Programmeur",
+        pageTitle: "Philippe Ho - Développeur Full-Stack",
         
         // Sidebar
-        role: "Programmeur",
+        role: "Développeur Full-Stack",
         location: "Montréal, Québec",
         website: "Site Web",
         languages: "Langues",
-        languagesList: "Français, Anglais",
-        skills: "Compétences",
-        gamingInterests: "Intérêts de jeu",
-        genAITools: "Outils d'IA générative",
+        languagesList: "Anglais (Courant), Français (Courant)",
+        llmGenAI: "Outils LLM et IA Générative",
+        llmGenAIList: "GPT 4.1, Claude 4.0, Gemini 2.5<br>Windsurf • Suno • Midjourney",
+        cloudAPIs: "Cloud et APIs",
+        cloudAPIsList: "Unity Cloud Code<br>AWS GameLift<br>WebSockets • API Spotify",
+        technicalSkills: "Compétences Techniques",
+        technicalSkillsList: "C# • C++ • JavaScript • Python<br>Linux • AWS • GitHub •<br>Unity • Unreal Engine",
         
         // Main content sections
-        experience: "EXPÉRIENCE PROFESSIONNELLE",
-        projects: "PROJETS",
-        education: "FORMATION",
-        courses: "COURS",
+        summary: "Résumé",
+        summaryText: "Développeur Full-Stack avec expérience en livraison de solutions client, intégration d'API et automatisation de systèmes. Livré des projets techniques complets de la conception au déploiement, avec expérience pratique des plateformes cloud et automatisation de flux de travail.",
+        experience: "Expérience Professionnelle",
+        projects: "Projets",
+        education: "Formation",
         
-        // Job 1
-        job1Title: "Téléfix productions, Programmeur de jeux",
+        // Job 1 - Updated Ada version
+        job1Title: "Téléfix Productions, Programmeur de Jeux",
         job1Period: "01/2024-11/2024 | Montréal, Canada",
-        job1Point1: "Développeur gérant toute l'implémentation technique d'un jeu publié sur Steam",
-        job1Point2: "Implémentation complète du code: systèmes, UI, audio, intégration d'assets",
-        job1Point3: "Contribution au game design, au QA et au débogage",
+        job1Point1: "Livré un jeu complet publié sur Steam",
+        job1Point2: "Géré la timeline du projet et résolu les problèmes d'intégration technique",
+        job1Point3: "Implémenté la logique de flux de travail, systèmes UI et pipelines d'assets avec Unity & C#",
+        job1Point4: "Exploité des outils d'IA pour le prototypage rapide et résolution de problèmes techniques",
         
-        // Job 2
-        job2Title: "Small Detour Games, Stagiaire en programmation",
-        job2Period: "04/2023-07/2023 | Montréal, Canada",
-        job2Point1: "Développement de systèmes PNJ incluant mécanismes de suivi de relations et IA de navigation urbaine",
-        job2Point2: "Implémentation du système de pathfinding NavMesh pour les mouvements et animations dynamiques des PNJ",
-        job2Point3: "Création de divers prototypes et fonctionnalités de gameplay avec Unity",
+        // Projects - All 4 from Ada version
+        project1Title: "Jeux Multijoueur en Ligne",
+        project1Desc: "Construit un jeu multijoueur utilisant Unity et WebSockets sur serveur Linux AWS. Fonctionnalités de système de matchmaking automatisé et gestion complète de sessions de jeu.",
         
-        // Job 3
-        job3Title: "Carrière précédente, Expert en sinistres",
-        job3Period: "2012 - 2020 | Montréal, Canada",
-        job3Companies: "International Programs Group • Crawford • SCM ClaimsPro",
-        job3Point1: "Carrière établie dans la résolution de réclamations commerciales et de responsabilité civile",
+        project2Title: "Intégration d'API Unity Cloud",
+        project2Desc: "Intégré les services Unity Cloud pour plateforme multijoueur au tour par tour. Exploité les APIs CloudCode et le système de lobby d'Unity pour implémenter le matchmaking automatisé et sessions de jeu.",
         
-        // Project 1
-        project1Title: "Jeu multijoueur sous Unity",
-        project1Desc: "Développement d'un jeu multijoueur au tour par tour utilisant Unity, WebSocket et AWS.",
-        project1Link: "Cliquez ici pour essayer!",
+        project3Title: "Automatiseur de Playlist Spotify",
+        project3Desc: "Construit un outil d'automatisation Python pour intégrer des mp3 dans des playlists.",
+        
+        project4Title: "Systèmes de Réseautage Multijoueur",
+        project4Desc: "Construit un jeu de tir multijoueur compétitif dans Unreal Engine utilisant C++ et architecture réseau. Implémenté la communication client-serveur, réplication d'état et gestion d'événements temps réel à travers des sessions de jeu distribuées.",
         
         // Education
-        school1: "Collège de Bois-de-Boulogne",
+        school1Title: "Collège de Bois-de-Boulogne",
         school1Period: "2022-2023 | Montréal, Canada",
-        school1Point1: "Apprentissage des moteurs de jeu Unreal et Unity.",
-        school1Point2: "Programmation en C++ et C#.",
-        school1Point3: "Contrôle de version avec GitHub et Perforce.",
+        school1Desc: "Programme de Développement de Jeux, travaillé avec Unity & Unreal Engine. Appris C++, C#, GitHub, Méthodologie Agile et stage de 3 mois dans une compagnie indie.",
         
-        // Courses
-        course1: "Serveur dédié et backend cloud",
-        course2: "Jeu de tir multijoueur sous Unreal Engine",
-        course3: "Jeu d'aventure Action-RPG monde ouvert sous UE5"
+        school2Title: "Université Concordia",
+        school2Period: "2008-2011 | Montréal, Canada",
+        school2Point1: "Génie Civil - 56 crédits complétés"
     }
 };

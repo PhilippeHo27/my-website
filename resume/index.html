@@ -3,130 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="pageTitle">Philippe Ho - Programmer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Philippe Ho - Full-Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="translations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <div class="floating-controls">
-        <button id="download-pdf" class="control-icon download-icon" title="Download as PDF">
+    <div class="floating-download">
+        <button id="download-pdf" class="download-icon" title="Download as PDF">
             <i class="fas fa-file-download"></i>
-        </button>
-        <button id="lang-toggle" class="control-icon lang-icon" title="Switch Language">
-            <i class="fas fa-language"></i>
-            <span id="current-lang">EN</span>
         </button>
     </div>
     <div class="container" id="resume-content">
         <aside class="sidebar">
             <header>
                 <h1>Philippe Ho</h1>
-                <h2 data-translate="role">Programmer</h2>
+                <h2>Full-Stack Developer</h2>
             </header>
             <div class="profile">
                 <div class="profile-img">
-                    <img src="../assets/img/profile2.jpg" alt="Philippe Ho">
+                    <img src="profile.jpg" alt="Philippe Ho">
                 </div>
                 <div class="contact-info">
                     <p><i class="far fa-envelope fa-fw"></i> philippeho27@gmail.com</p>
                     <p><i class="fas fa-phone fa-fw"></i> (514) 713-5487</p>
-                    <p><i class="fas fa-map-marker-alt fa-fw"></i> <span data-translate="location">Montréal, Québec</span></p>
+                    <p><i class="fas fa-map-marker-alt fa-fw"></i> Montréal, Québec</p>
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/PhilippeHo27"><i class="fab fa-github fa-fw"></i> GitHub</a>
-                    <a href="https://linkedin.com/in/philippe-ho"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a>
-                    <a href="https://discord.com"><i class="fab fa-discord fa-fw"></i> Discord</a>
-                    <a href="../index.html"><i class="fas fa-globe fa-fw"></i> <span data-translate="website">Website</span></a>
-                </div>
-            </div>
-            <div class="sidebar-section">
-                <h2><i class="fas fa-earth-americas" style="margin-right: 8px;"></i> <span data-translate="languages">Languages</span></h2>
-                <p data-translate="languagesList">French, English</p>
-            </div>
-
-            <div class="sidebar-section">
-                <h2><i class="fas fa-laptop-code" style="margin-right: 8px;"></i> <span data-translate="skills">Skills</span></h2>
-                <p>C++ • C# • Unity • Unreal Engine •<br>
-                GitHub • AWS EC2 • JavaScript •<br> 
-                Python • Perforce</p>
+                    <a href="https://www.linkedin.com/in/philippe-ho/"><i class="fab fa-linkedin fa-fw"></i> LinkedIn</a>
+                    <a href="https://philippeho27.github.io/my-website/"><i class="fas fa-globe fa-fw"></i> Website</a>
+                </div>                
             </div>
             
             <div class="sidebar-section">
-                <h2><i class="fas fa-gamepad" style="margin-right: 8px;"></i> <span data-translate="gamingInterests">Gaming Interests</span></h2>
-                <p>MMORPG • RTS • MOBA • FPS<br></p>
+                <h2><i class="fas fa-robot" style="margin-right: 8px;"></i> LLM & GenAI Tools</h2>
+                <p>GPT 4.1, Claude 4.0, Gemini 2.5 <br>
+                Windsurf • Suno • Midjourney</p>
             </div>
             
             <div class="sidebar-section">
-                <h2><i class="fas fa-robot" style="margin-right: 8px;"></i> <span data-translate="genAITools">GEN AI Tools</span></h2>
-                <p>GPT-4o • Claude 3.7 • Midjourney<br>
+                <h2><i class="fas fa-cloud" style="margin-right: 8px;"></i> Cloud & APIs</h2>
+                <p>AWS EC2 • Unity Cloud Code<br>
+                Steam Online Subsystem<br>
+                WebSockets • REST APIs<br>
+                Spotify API Integration</p>
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-laptop-code" style="margin-right: 8px;"></i> Technical Skills</h2>
+                <p>C# • C++ • JavaScript • Python <br>
+                Linux • AWS • GitHub • <br>
+                Unity • Unreal Engine
+            </div>
+            
+            <div class="sidebar-section">
+                <h2><i class="fas fa-earth-americas" style="margin-right: 8px;"></i> Languages</h2>
+                <p>English (Fluent)<br>
+                French (Fluent)
                 </p>
             </div>
+            
         </aside>
 
+
         <main class="content">
+            <section class="summary">
+                <h2>Summary</h2>
+                <p>Full-stack developer shipping complete technical projects from concept to deployment. Built multiplayer systems with Unity, AWS, and custom networking; integrated cloud APIs and automated workflows. Experienced translating technical architecture into clear solutions for non-technical stakeholders.</p>
+            </section>
+
+
             <section class="experience">
-                <h2 data-translate="experience">PROFESSIONAL EXPERIENCE</h2>
+                <h2>Professional Experience</h2>
                 
                 <div class="job">
-                    <h3 data-translate="job1Title">Téléfix productions, Game Programmer</h3>
-                    <div class="job-period" data-translate="job1Period">01/2024-11/2024 | Montréal, Canada</div>
+                    <h3>Téléfix Productions, Game Programmer</h3>
+                    <div class="job-period">01/2024-11/2024 | Montréal, Canada</div>
                     <ul>
-                        <li data-translate="job1Point1">Sole developer handling all technical implementation for a Steam-released game</li>
-                        <li data-translate="job1Point2">Implemented complete codebase: gameplay systems, UI, audio, asset integration</li>
-                        <li data-translate="job1Point3">Contributed to game design, QA and debugging</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <h3 data-translate="job2Title">Small Detour Games, Programmer Intern</h3>
-                    <div class="job-period" data-translate="job2Period">04/2023-07/2023 | Montréal, Canada</div>
-                    <ul>
-                        <li data-translate="job2Point1">Developed NPC systems including relationship tracking mechanics and town navigation AI</li>
-                        <li data-translate="job2Point2">Implemented NavMesh pathfinding system for dynamic NPC movement and animations</li>
-                        <li data-translate="job2Point3">Created various gameplay prototypes and features using Unity</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <h3 data-translate="job3Title">Previous Career, Claims Adjuster</h3>
-                    <div class="job-period" data-translate="job3Period">2012 - 2020 | Montréal, Canada</div>
-                    <p data-translate="job3Companies">International Programs Group • Crawford • SCM ClaimsPro</p>
-                    <ul>
-                        <li data-translate="job3Point1">Prior established career in resolving commercial and liability claims</li>
+                        <li>Shipped complete Unity game to Steam, managing full development cycle from prototype to release</li>
+                        <li>Built core gameplay systems, UI architecture, and asset pipelines using C# and Unity</li>
+                        <li>Integrated third-party APIs and resolved platform-specific deployment issues</li>
+                        <li>Communicated technical constraints and timeline trade-offs to non-technical project owner</li>
                     </ul>
                 </div>
             </section>
+
 
             <section class="projects">
-                <h2 data-translate="projects">PROJECTS</h2>
+                <h2>Technical Projects</h2>
+                
                 <div class="project">
-                    <h3 data-translate="project1Title">Multiplayer Game in Unity</h3>
-                    <p data-translate="project1Desc">Building a turn based multiplayer game using Unity, WebSocket, and AWS.</p>
-                    <a href="https://philippeho27.github.io/ChatroomWars/" target="_blank" data-translate="project1Link">Click here to try!</a>
+                    <h3>Multiplayer Game Architecture</h3>
+                    <p>Built real-time multiplayer game using Unity and custom WebSocket server on AWS Linux. Implemented matchmaking system, state synchronization, and chat with custom packet serialization. 
+                    <a href="https://philippeho.popnux.com/workshopgames/" target="_blank">Try it live!</a></p>
                 </div>
+                
+                <div class="project">
+                    <h3>Unity Cloud Backend Integration</h3>
+                    <p>Integrated Unity Cloud Code for turn-based multiplayer. Built server-side CloudCode functions for lobby management, automated matchmaking, and persistent player state synchronization.</p>
+                </div>
+                
+                <div class="project">
+                    <h3>Unreal Engine Networked Shooter</h3>
+                    <p>Developed competitive multiplayer shooter in C++ using Unreal's replication system and Steam Online Subsystem. Implemented client-server architecture, async Steam authentication, and session management.</p>
+                </div>
+
+
             </section>
+
 
             <section class="education">
-                <h2 data-translate="education">EDUCATION</h2>
+                <h2>Education</h2>
+                
                 <div class="school">
-                    <h3 data-translate="school1">Collège de Bois-de-Boulogne</h3>
-                    <div class="edu-period" data-translate="school1Period">2022-2023 | Montréal, Canada</div>
-                    <ul>
-                        <li data-translate="school1Point1">Learned Unreal and Unity game engines.</li>
-                        <li data-translate="school1Point2">Programming in C++ and C#.</li>
-                        <li data-translate="school1Point3">Version control with GitHub and Perforce.</li>
-                    </ul>
+                    <h3>Collège de Bois‑de‑Boulogne — AEC (Attestation of College Studies)</h3>
+                    <div class="edu-period">2022-2023 | Montréal, Canada</div>
+                    <p>Game Development Program, worked with Unity & Unreal Engine. Learned C++, C#, GitHub, Agile Methodology and 3-months internship at an indie company. </p>
                 </div>
-            </section>
-
-            <section class="courses">
-                <h2 data-translate="courses">COURSES</h2>
-                <ul class="course-list">
-                    <li data-translate="course1">Dedicated Server & Cloud Backend</li>
-                    <li data-translate="course2">Unreal Engine Multiplayer Shooter</li>
-                    <li data-translate="course3">UE5 Action-RPG Open World Adventure</li>
-                </ul>
+                
+                <div class="school">
+                    <h3>Concordia University — Civil Engineering (56 credits completed)</h3>
+                    <div class="edu-period"> 2008-2011 | Montréal, Canada</div>
+                    <p>Critical Thinking, problem solving, technical communication</p>
+                </div>
             </section>
         </main>
     </div>
