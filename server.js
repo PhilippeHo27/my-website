@@ -22,7 +22,7 @@ app.post('/api/save', (req, res) => {
         return res.status(400).json({ error: 'Invalid data structure' });
     }
 
-    const filePath = path.join(__dirname, 'src/data/resume.json');
+    const filePath = path.join(__dirname, 'public/data/resume.json');
 
     fs.writeFile(filePath, JSON.stringify(newData, null, 2), (err) => {
         if (err) {
