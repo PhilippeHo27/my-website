@@ -20,12 +20,12 @@
     --bg-page: #f5f5f5;
     --bg-content: #fff;
     --border-color: #123f74;
-    
+
     /* Typography */
     --font-base: 'Source Sans 3', Helvetica, Arial, sans-serif;
     --line-height-base: 1.5;
     --line-height-tight: 1.4;
-    
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -348,15 +348,15 @@ li {
         grid-template-columns: 40% 60%;
         max-width: 100%;
     }
-    
+
     .sidebar {
         padding: var(--spacing-md);
     }
-    
+
     .content {
         padding: var(--spacing-md);
     }
-    
+
     .profile-img {
         width: 100px;
     }
@@ -369,28 +369,28 @@ li {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
     }
-    
+
     .sidebar {
         padding: var(--spacing-md);
     }
-    
+
     .content {
         padding: var(--spacing-md);
     }
-    
+
     .sidebar header h1 {
         font-size: 1.5rem;
     }
-    
+
     .sidebar header h2 {
         font-size: 1.1rem;
     }
-    
+
     .floating-download {
         top: 10px;
         right: 10px;
     }
-    
+
     .download-icon {
         width: 40px;
         height: 40px;
@@ -406,7 +406,7 @@ li {
         size: letter;
         margin: 0.4in 0.5in;
     }
-    
+
     body,
     html {
         margin: 0;
@@ -418,11 +418,11 @@ li {
         orphans: 3;
         widows: 3;
     }
-    
+
     .floating-download {
         display: none !important;
     }
-    
+
     .container {
         display: grid;
         grid-template-columns: 30% 70%;
@@ -435,7 +435,7 @@ li {
         box-shadow: none;
         page-break-after: auto;
     }
-    
+
     .sidebar {
         background-color: var(--sidebar-bg) !important;
         color: var(--sidebar-text) !important;
@@ -446,7 +446,7 @@ li {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
-    
+
     .content {
         padding: 1rem;
         height: auto;
@@ -454,7 +454,7 @@ li {
         page-break-before: auto;
         page-break-after: auto;
     }
-    
+
     .job,
     .project,
     .school {
@@ -463,47 +463,49 @@ li {
         page-break-after: auto;
         margin-bottom: 0.5rem;
     }
-    
+
     section {
         margin-bottom: 0.75rem;
     }
-    
+
     section h2 {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
     }
-    
+
     h3 {
         font-size: 1rem;
     }
-    
-    p, li {
+
+    p,
+    li {
         font-size: 0.85rem;
     }
-    
+
     ul,
     li {
         page-break-inside: avoid;
     }
-    
+
     .profile-img img {
         max-height: 100%;
     }
-    
+
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         color-adjust: exact !important;
     }
-    
+
     a,
     .social-links a {
         color: inherit !important;
         text-decoration: none !important;
     }
-    
+
     .download-btn,
-    .download-icon {
-        display: none;
+    .download-icon,
+    #editor-controls {
+        display: none !important;
     }
 }

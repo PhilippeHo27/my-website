@@ -7,23 +7,24 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Philippe Ho</title>
-  <link rel="icon" type="image/x-icon" href="assets/img/tabicon2.ico">
+  <link rel="icon" type="image/x-icon" href="/assets/img/tabicon2.ico">
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://use.fontawesome.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  
-  <!-- Preload critical CSS -->
-  <link rel="preload" href="css/reduced-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="css/reduced-styles.css"></noscript>
-  
+
+  <!-- CSS handled by Vite main.js import -->
+
   <!-- Load non-critical CSS asynchronously -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print" onload="this.media='all'">
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print"
+    onload="this.media='all'">
+
   <!-- Load fonts with font-display: swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&family=Muli:wght@400;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&family=Muli:wght@400;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+
   <!-- Load Font Awesome asynchronously -->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" async></script>
 </head>
@@ -33,7 +34,7 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none">Philippe Ho</span>
       <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-          src="assets/img/profile2.jpg" alt="Headshot of Philippe Ho" loading="lazy"></span>
+          src="/assets/img/profile2.jpg" alt="Headshot of Philippe Ho" loading="lazy"></span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
@@ -44,6 +45,8 @@
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" id="admin-toggle-link"
+            style="font-size: 0.8rem; opacity: 0.5; margin-top: 2rem;">[ Edit Mode ]</a></li>
       </ul>
     </div>
   </nav>
@@ -52,19 +55,27 @@
       <div class="resume-section-content">
         <h1 class="mb-0 custom-header"> Philippe Ho </h1>
         <div class="subheading mb-5"></div>
-        <p class="lead mb-5">
-          Based in Montréal, Canada, I'm a software developer with a focus on game development. My experience includes shipping a commercial game title using Unity, and I'm currently building projects with both Unity and Unreal Engine.
+        <p class="lead mb-5" data-path="main.summary.content">
+          Based in Montréal, Canada, I'm a software developer with a focus on game development. My experience includes
+          shipping a commercial game title using Unity, and I'm currently building projects with both Unity and Unreal
+          Engine.
         </p>
         <p class="lead mb-5">
-            Actively seeking new opportunities in game development where I can contribute my experience while continuing to grow technically. Currently working on multiplayer game projects to expand my expertise in networked gameplay and cloud infrastructure.
+          Actively seeking new opportunities in game development where I can contribute my experience while continuing
+          to grow technically. Currently working on multiplayer game projects to expand my expertise in networked
+          gameplay and cloud infrastructure.
         </p>
         <div class="social-icons">
-          <a class="social-icon" href="https://www.linkedin.com/in/philippe-ho" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-          <a class="social-icon" href="https://github.com/PhilippeHo27" aria-label="GitHub profile"><i class="fab fa-square-github" aria-hidden="true"></i></a>
-          <a class="social-icon" href="#" onclick="openResume(); return false;" aria-label="View resume"><i class="fas fa-file-lines" aria-hidden="true"></i></a>
-          <a class="social-icon" id="contact-info-btn" onclick="showContactPopup(event)" aria-label="Contact information"><i class="fas fa-address-card" aria-hidden="true"></i></a>
-        </div>      
-        
+          <a class="social-icon" href="https://www.linkedin.com/in/philippe-ho" aria-label="LinkedIn profile"><i
+              class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a class="social-icon" href="https://github.com/PhilippeHo27" aria-label="GitHub profile"><i
+              class="fab fa-square-github" aria-hidden="true"></i></a>
+          <a class="social-icon" href="#" onclick="openResume(); return false;" aria-label="View resume"><i
+              class="fas fa-file-lines" aria-hidden="true"></i></a>
+          <a class="social-icon" id="contact-info-btn" onclick="showContactPopup(event)"
+            aria-label="Contact information"><i class="fas fa-address-card" aria-hidden="true"></i></a>
+        </div>
+
         <div id="contact-popup" class="contact-popup">
           <div class="popup-content">
             <span class="close-popup" onclick="closeContactPopup()">&times;</span>
@@ -77,32 +88,37 @@
 
         <div style="margin-top: 3rem;"></div>
         <ul class="list-inline dev-icons">
-            <li class="list-inline-item" title="C++"><i class="devicon-cplusplus-plain colored"></i></li>
-            <li class="list-inline-item" title="C#"><i class="devicon-csharp-plain colored"></i></li>
-            <li class="list-inline-item" title="Unity"><i class="devicon-unity-plain"></i></li>
-            <li class="list-inline-item" title="Unreal Engine"><i class="devicon-unrealengine-original"></i></li>
-            <li class="list-inline-item" title="Godot"><i class="devicon-godot-plain colored"></i></li>
-            <li class="list-inline-item" title="Blender"><i class="devicon-blender-original colored"></i></li>
-            <li class="list-inline-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></li>
-            <li class="list-inline-item" title="Python"><i class="devicon-python-plain colored"></i></li>
-            <li class="list-inline-item" title="Amazon Web Services"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></li>
-            <li class="list-inline-item" title="HTML5"><i class="devicon-html5-plain colored"></i></li>
+          <li class="list-inline-item" title="C++"><i class="devicon-cplusplus-plain colored"></i></li>
+          <li class="list-inline-item" title="C#"><i class="devicon-csharp-plain colored"></i></li>
+          <li class="list-inline-item" title="Unity"><i class="devicon-unity-plain"></i></li>
+          <li class="list-inline-item" title="Unreal Engine"><i class="devicon-unrealengine-original"></i></li>
+          <li class="list-inline-item" title="Godot"><i class="devicon-godot-plain colored"></i></li>
+          <li class="list-inline-item" title="Blender"><i class="devicon-blender-original colored"></i></li>
+          <li class="list-inline-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></li>
+          <li class="list-inline-item" title="Python"><i class="devicon-python-plain colored"></i></li>
+          <li class="list-inline-item" title="Amazon Web Services"><i
+              class="devicon-amazonwebservices-plain-wordmark colored"></i></li>
+          <li class="list-inline-item" title="HTML5"><i class="devicon-html5-plain colored"></i></li>
         </ul>
       </div>
     </section>
     <hr class="m-0">
     <section class="resume-section" id="experience">
       <div class="resume-section-content">
-        <h2 class="mb-5 custom-header">Experience</h2>
+        <h2 class="mb-5 custom-header" data-path="main.experience.title">Experience</h2>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header">Téléfix Productions</h3>
-            <div class="subheading mb-3">Game Programmer</div>
-            <p class="lead">Developed a Steam-published construction game, implementing essential gameplay systems including character movement, save functionality, shader effects, UI/UX, and sound integration.</p>
-            <a href="https://store.steampowered.com/app/3113740/Dont_Drop_The_Wall_Jack/" target="_blank" rel="noopener">
+            <h3 class="mb-0 custom-header" data-path="main.experience.items.0.company">Téléfix Productions</h3>
+            <div class="subheading mb-3" data-path="main.experience.items.0.role">Game Programmer</div>
+            <p class="lead" data-path="main.experience.items.0.description_short">Developed a Steam-published
+              construction game, implementing essential gameplay systems
+              including character movement, save functionality, shader effects, UI/UX, and sound integration.</p>
+            <a href="https://store.steampowered.com/app/3113740/Dont_Drop_The_Wall_Jack/" target="_blank"
+              rel="noopener">
               <div class="game-video-container">
-                <video autoplay loop muted playsinline class="game-video" loading="lazy" title="Gameplay footage of Don't Drop The Wall Jack">
-                  <source src="assets/img/dontdrop.webm" type="video/webm">
+                <video autoplay loop muted playsinline class="game-video" loading="lazy"
+                  title="Gameplay footage of Don't Drop The Wall Jack">
+                  <source src="/assets/img/dontdrop.webm" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -114,11 +130,13 @@
           <div class="flex-grow-1">
             <h3 class="mb-0 custom-header">Small Detour Games</h3>
             <div class="subheading mb-3">Programmer Intern</div>
-            <p class="lead">Worked on implementing features including a hidden NPC relationship meter for tracking growth. Developed trigger points for specific events and interactions.</p>
+            <p class="lead">Worked on implementing features including a hidden NPC relationship meter for tracking
+              growth. Developed trigger points for specific events and interactions.</p>
             <a href="https://store.steampowered.com/app/2707880/Troubadours/" target="_blank" rel="noopener">
               <div class="game-video-container">
-                <video autoplay loop muted playsinline class="game-video" loading="lazy" title="Gameplay footage of Don't Drop The Wall Jack">
-                  <source src="assets/img/troubadour.webm" type="video/webm">
+                <video autoplay loop muted playsinline class="game-video" loading="lazy"
+                  title="Gameplay footage of Don't Drop The Wall Jack">
+                  <source src="/assets/img/troubadour.webm" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -127,36 +145,46 @@
           <div class="flex-shrink-0"><span class="subheading date-text">March 2023 - June 2023</span></div>
         </div>
       </div>
-    </section>    
+    </section>
     <hr class="m-0">
     <section class="resume-section" id="projects">
       <div class="resume-section-content">
-        <h2 class="mb-5 custom-header">Projects</h2>
+        <h2 class="mb-5 custom-header" data-path="main.projects.title">Projects</h2>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header">Unity WebSocket Multiplayer Project</h3>
-            <div class="subheading mb-3 subheading">A workshop for Prototypes</div>              
+            <h3 class="mb-0 custom-header" data-path="main.projects.items.0.title">Unity WebSocket Multiplayer Project
+            </h3>
+            <div class="subheading mb-3 subheading" data-path="main.projects.items.0.subtitle">A workshop for Prototypes
+            </div>
             <ul class="list-styled">
-              <li>Workshop for a couple of games to test out multiplayer functionalities</li>
-              <li>Implemented real-time gameplay using WebSocket communication</li>
-              <li>Deployed on AWS EC2 with always-on server availability</li>
-              <li>JavaScript for web integration and Linux for server management</li>
+              <li data-path="main.projects.items.0.points.0">Workshop for a couple of games to test out multiplayer
+                functionalities</li>
+              <li data-path="main.projects.items.0.points.1">Implemented real-time gameplay using WebSocket
+                communication</li>
+              <li data-path="main.projects.items.0.points.2">Deployed on AWS EC2 with always-on server availability</li>
+              <li data-path="main.projects.items.0.points.3">JavaScript for web integration and Linux for server
+                management</li>
             </ul>
-            <div class="game-preview-container mb-3 text-center">
-              <a href="https://philippeho.popnux.com/workshopgames/" target="_blank" rel="noopener noreferrer" class="game-preview-link">
+            <div class="game-preview-container mb-3" style="text-align: left;">
+              <a href="https://philippeho.popnux.com/workshopgames/" target="_blank" rel="noopener noreferrer"
+                class="game-preview-link">
                 <div class="play-demo-button">
                   Click to Play
                 </div>
               </a>
             </div>
           </div>
-        </div>  
+        </div>
         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="flex-grow-1">
             <h3 class="mb-0 custom-header">Dedicated Server &amp; Cloud Backend Masterclass</h3>
             <div class="subheading mb-3">AWS &amp; Unreal Engine Course</div>
             <p class="lead">
-              A comprehensive course project focused on deploying dedicated servers and creating robust cloud backend solutions for Unreal Engine games. Topics include compiling Unreal Engine from source, integrating GameLift, making API calls via the AWS CLI, setting up secure user pools with Amazon Cognito, building REST APIs with Amazon API Gateway, and managing persistent game data with DynamoDB. This project is designed for scaling multiplayer experiences to a global audience.
+              A comprehensive course project focused on deploying dedicated servers and creating robust cloud backend
+              solutions for Unreal Engine games. Topics include compiling Unreal Engine from source, integrating
+              GameLift, making API calls via the AWS CLI, setting up secure user pools with Amazon Cognito, building
+              REST APIs with Amazon API Gateway, and managing persistent game data with DynamoDB. This project is
+              designed for scaling multiplayer experiences to a global audience.
             </p>
           </div>
         </div>
@@ -165,7 +193,11 @@
             <h3 class="mb-0 custom-header">Unreal Engine Multiplayer Shooter</h3>
             <div class="subheading mb-3">Competitive Multiplayer C++ Game</div>
             <p class="lead">
-              Developed a competitive multiplayer shooter using Unreal Engine. The project features matchmaking sessions, a custom plugin to convert single-player projects into multiplayer experiences, advanced replication techniques, and lag compensation (including client-side prediction and server-side rewind). It also includes a diverse arsenal of weapons, pickups, and a fully functional HUD — all optimized for high-performance and scalability.
+              Developed a competitive multiplayer shooter using Unreal Engine. The project features matchmaking
+              sessions, a custom plugin to convert single-player projects into multiplayer experiences, advanced
+              replication techniques, and lag compensation (including client-side prediction and server-side rewind). It
+              also includes a diverse arsenal of weapons, pickups, and a fully functional HUD — all optimized for
+              high-performance and scalability.
             </p>
           </div>
         </div>
@@ -174,12 +206,15 @@
             <h3 class="mb-0 custom-header">UE5 Action-RPG Open World Adventure</h3>
             <div class="subheading mb-3">C++ Open World Game Development</div>
             <p class="lead">
-              Built an action-RPG open world game entirely in Unreal Engine 5. This project includes third-person combat with melee weapons, dynamic enemy AI, health bars, and immersive open world design using Quixel Megascans. Enhanced features such as motion warping, MetaSounds, particle effects, and advanced animation systems were integrated alongside best coding practices and optimal data structures.
+              Built an action-RPG open world game entirely in Unreal Engine 5. This project includes third-person combat
+              with melee weapons, dynamic enemy AI, health bars, and immersive open world design using Quixel Megascans.
+              Enhanced features such as motion warping, MetaSounds, particle effects, and advanced animation systems
+              were integrated alongside best coding practices and optimal data structures.
             </p>
           </div>
         </div>
       </div>
-  </section>
+    </section>
     <hr class="m-0">
     <section class="resume-section" id="education">
       <div class="resume-section-content">
@@ -200,14 +235,14 @@
           <div class="flex-grow-1">
             <h3 class="mb-0 custom-header project-title">Concordia University</h3>
             <div class="subheading mb-3">Bachelors - Civil Engineering (56 completed credits)</div>
-            <ul class ="list-styled">
+            <ul class="list-styled">
               <li>Developed strong analytical and problem-solving abilities.</li>
             </ul>
           </div>
           <div class="flex-shrink-0"><span class="subheading date-text">2008 - 2011</span></div>
         </div>
       </div>
-  </section>
+    </section>
   </div>
 
   <div id="resumeOverlay" class="overlay" style="display: none;">
@@ -224,6 +259,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/scripts.js"></script>
-  
+  <script type="module" src="/main.js"></script>
 </body>
+
 </html>
