@@ -3,6 +3,12 @@
    ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap');
 
+@page {
+    size: letter;
+    margin: 0;
+}
+
+
 
 /* ============================================
    CSS VARIABLES
@@ -159,7 +165,7 @@ body {
 
 
 .contact-info {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 0.25rem;
 }
 
 
@@ -175,6 +181,37 @@ body {
     margin-right: 0.625rem;
 }
 
+.social-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-left: 2px;
+}
+
+.social-row a {
+    color: var(--sidebar-text-muted);
+    font-size: 1.2rem;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-row a:hover {
+    color: var(--sidebar-text);
+    transform: translateY(-2px);
+}
+
+.contact-info a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+.social-links:empty {
+    display: none;
+}
 
 .social-links {
     display: flex;
@@ -419,40 +456,48 @@ li {
         widows: 3;
     }
 
-    .floating-download {
-        display: none !important;
+    html,
+    body {
+        height: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .container {
         display: grid;
         grid-template-columns: 30% 70%;
         width: 100%;
-        height: auto;
-        min-height: auto;
-        max-width: 100%;
+        height: 100vh;
+        /* Using 100vh with @page margin 0 is standard */
+        max-height: 100vh;
+        width: 100vw;
         margin: 0;
         padding: 0;
         box-shadow: none;
-        page-break-after: auto;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+        overflow: hidden;
     }
 
     .sidebar {
         background-color: var(--sidebar-bg) !important;
         color: var(--sidebar-text) !important;
-        padding: 1rem;
-        height: auto;
-        min-height: auto;
+        padding: 1.5rem 1rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         page-break-inside: avoid;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
 
     .content {
-        padding: 1rem;
-        height: auto;
-        min-height: auto;
-        page-break-before: auto;
-        page-break-after: auto;
+        padding: 1.5rem 2rem;
+        height: 100%;
+        overflow: hidden;
     }
 
     .job,

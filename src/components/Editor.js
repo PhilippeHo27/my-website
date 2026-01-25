@@ -26,24 +26,33 @@ export class Editor {
         gap: 10px; 
         z-index: 9999;
         padding: 10px;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0,0,0,0.9);
+        border: 1px solid #444;
         border-radius: 8px;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       `;
 
         // Save Button
         const saveBtn = document.createElement('button');
         saveBtn.innerText = '💾 Save';
-        saveBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #2ecc71; color: white; cursor: pointer; font-weight: bold;';
+        saveBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #2ecc71; color: white; cursor: pointer; font-weight: bold; transition: all 0.2s;';
         saveBtn.onclick = () => this.save();
+
+        // History Button
+        const histBtn = document.createElement('button');
+        histBtn.innerText = '📜 History';
+        histBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #3498db; color: white; cursor: pointer; font-weight: bold; transition: all 0.2s;';
+        histBtn.onclick = () => this.showHistory();
 
         // Close Button
         const closeBtn = document.createElement('button');
         closeBtn.innerText = '❌ Close';
-        closeBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #e74c3c; color: white; cursor: pointer; font-weight: bold;';
+        closeBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #e74c3c; color: white; cursor: pointer; font-weight: bold; transition: all 0.2s;';
         closeBtn.onclick = () => this.toggleEditMode(false);
 
         container.appendChild(saveBtn);
+        container.appendChild(histBtn);
         container.appendChild(closeBtn);
         document.body.appendChild(container);
         this.controls = container;
@@ -59,10 +68,59 @@ export class Editor {
         console.log('Editor initialized. Press Ctrl+Shift+E to edit.');
     }
 
-    toggleEditMode(active) {
+    async toggleEditMode(active) {
+        if (active && !this.isEditing) {
+            const password = prompt('Enter password to edit CV (Default: 0000):');
+            if (password !== '0000') {
+                alert('Access Denied');
+                return;
+            }
+        }
+
         this.isEditing = active;
         this.controls.style.display = active ? 'flex' : 'none';
         this.applyEditable(active);
+    }
+
+    async showHistory() {
+        try {
+            const response = await fetch('/api/backups');
+            const backups = await response.json();
+
+            if (backups.length === 0) {
+                alert('No backups found yet.');
+                return;
+            }
+
+            const selection = prompt(
+                'Select a backup to restore (index):\n' +
+                backups.map((f, i) => `${i}: ${f}`).join('\n')
+            );
+
+            if (selection !== null && backups[selection]) {
+                const confirmRes = confirm(`Are you sure you want to restore ${backups[selection]}? Current changes will be overwritten.`);
+                if (confirmRes) {
+                    const dataRes = await fetch(`/data/backups/${backups[selection]}`);
+                    const restoredData = await dataRes.json();
+
+                    // Directly save this back to the main file
+                    const saveRes = await fetch('/api/save', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(restoredData)
+                    });
+
+                    if (saveRes.ok) {
+                        alert('Backup restored successfully! Reloading...');
+                        window.location.reload();
+                    } else {
+                        throw new Error('Failed to save restored data');
+                    }
+                }
+            }
+        } catch (e) {
+            alert('Failed to fetch history: ' + e.message);
+        }
     }
 
     applyEditable(active) {

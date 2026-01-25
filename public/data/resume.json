@@ -7,8 +7,13 @@
             "role": "Full-Stack Developer",
             "location": "Montréal, Québec",
             "website": {
-                "label": "Website",
-                "url": "https://philippeho27.github.io/my-website/"
+                "url": "https://philippeho.popnux.com/"
+            },
+            "linkedin": {
+                "url": "https://www.linkedin.com/in/philippe-ho/"
+            },
+            "github": {
+                "url": "https://github.com/PhilippeHo27"
             },
             "languages": {
                 "title": "Languages",
@@ -19,13 +24,13 @@
             },
             "sections": [
                 {
-                    "title": "LLM & GenAI Tools",
-                    "content": "GPT 4.1, Claude 4.0, Gemini 2.5<br>Windsurf • Suno • Midjourney",
+                    "title": "AI Tools",
+                    "content": "Claude • Gemini • ChatGPT<br>Perplexity • n8n • Cursor",
                     "icon": "fas fa-robot"
                 },
                 {
                     "title": "Cloud & APIs",
-                    "content": "Unity Cloud Code<br>AWS GameLift<br>WebSockets • Spotify API",
+                    "content": "Unity Cloud Code<br>AWS GameLift<br>Apify • Spotify API",
                     "icon": "fas fa-cloud"
                 },
                 {
@@ -68,10 +73,6 @@
                         "description": "Integrated Unity Cloud services for turn-based multiplayer platform. Leveraged CloudCode APIs and Unity's lobby system to implement automated matchmaking and game sessions."
                     },
                     {
-                        "title": "Spotify Playlist Automator",
-                        "description": "Built Python automation tool to integrate mp3s into playlists."
-                    },
-                    {
                         "title": "Multiplayer Networking Systems",
                         "description": "Built competitive multiplayer shooter in Unreal Engine using C++ and networked architecture. Implemented client-server communication, state replication, and real-time event handling across distributed game sessions."
                     }
@@ -102,8 +103,13 @@
             "role": "Développeur Full-Stack",
             "location": "Montréal, Québec",
             "website": {
-                "label": "Site Web",
-                "url": "https://philippeho27.github.io/my-website/"
+                "url": "https://philippeho.popnux.com/"
+            },
+            "linkedin": {
+                "url": "https://www.linkedin.com/in/philippe-ho/"
+            },
+            "github": {
+                "url": "https://github.com/PhilippeHo27"
             },
             "languages": {
                 "title": "Langues",
@@ -114,13 +120,13 @@
             },
             "sections": [
                 {
-                    "title": "Outils LLM et IA Générative",
-                    "content": "GPT 4.1, Claude 4.0, Gemini 2.5<br>Windsurf • Suno • Midjourney",
+                    "title": "Outils IA",
+                    "content": "Claude • Gemini • ChatGPT<br>Perplexity • n8n • Cursor",
                     "icon": "fas fa-robot"
                 },
                 {
                     "title": "Cloud et APIs",
-                    "content": "Unity Cloud Code<br>AWS GameLift<br>WebSockets • API Spotify",
+                    "content": "Unity Cloud Code<br>AWS GameLift<br>Apify • API Spotify",
                     "icon": "fas fa-cloud"
                 },
                 {
@@ -133,7 +139,7 @@
         "main": {
             "summary": {
                 "title": "Résumé",
-                "content": "Développeur Full-Stack avec expérience en livraison de solutions client, intégration d'API et automatisation de systèmes. Livré des projets techniques complets de la conception au déploiement, avec expérience pratique des plateformes cloud et automatisation de flux de travail."
+                "content": "Développeur spécialisé dans le déploiement de solutions techniques et l'automatisation de systèmes. J'assure la réalisation complète de projets, de la phase de conception jusqu'à la mise en production."
             },
             "experience": {
                 "title": "Expérience Professionnelle",
@@ -143,10 +149,10 @@
                         "role": "Programmeur de Jeux",
                         "period": "01/2024-11/2024 | Montréal, Canada",
                         "points": [
-                            "Livré un jeu complet publié sur Steam",
-                            "Géré la timeline du projet et résolu les problèmes d'intégration technique",
-                            "Implémenté la logique de flux de travail, systèmes UI et pipelines d'assets avec Unity & C#",
-                            "Exploité des outils d'IA pour le prototypage rapide et résolution de problèmes techniques"
+                            "Livré un jeu complet et publié sur Steam",
+                            "Gestion du projet et résolution des problèmes d'intégration technique",
+                            "Implémenté la logique du jeu, l'interface et lets assets avec Unity",
+                            "Prototypage rapide et résolution de problèmes techniques"
                         ]
                     }
                 ]
@@ -156,7 +162,7 @@
                 "items": [
                     {
                         "title": "Jeux Multijoueur en Ligne",
-                        "description": "Construit un jeu multijoueur utilisant Unity et WebSockets sur serveur Linux AWS. Fonctionnalités de système de matchmaking automatisé et gestion complète de sessions de jeu."
+                        "description": "Construit un jeu multijoueur utilisant Unity et WebSockets sur serveur Linux AWS. Fonctionnalités de système de matchmaking automatisé et gestion de sessions de jeu."
                     },
                     {
                         "title": "Intégration d'API Unity Cloud",

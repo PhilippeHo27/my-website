@@ -1,52 +1,18 @@
 import './css/reduced-styles.css';
 import './styles/input.css';
-import { fetchResumeData } from './components/ResumeLoader.js';
-import { Editor } from './components/Editor.js';
-
-let resumeData = null;
-let currentLang = 'en';
-let editor = null;
+// Landing page logic
 
 async function init() {
-    resumeData = await fetchResumeData();
-
-    // Initialize Editor
-    editor = new Editor();
-    editor.onSave = async () => {
-        try {
-            const response = await fetch('/api/save', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(resumeData)
-            });
-            if (!response.ok) throw new Error('Network response was not ok');
-        } catch (e) {
-            throw e;
-        }
-    };
-
-    if (resumeData) {
-        // For the landing page, we don't re-render the whole DOM (it's too custom)
-        // But we bind the data to the editor so it knows what to update in the JSON
-        editor.bind(resumeData[currentLang]);
-
-        // Link the sidebar toggle
-        const adminToggle = document.getElementById('admin-toggle-link');
-        if (adminToggle) {
-            adminToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                editor.toggleEditMode(!editor.isEditing);
-            });
-        }
-    }
+    // Landing page is now viewing-only. 
+    // Data syncing is handled during the build process or via server-side rendering.
 }
 
 // Helper functions for landing page UI (exposed for inline onclick)
-window.openResume = function() {
+window.openResume = function () {
     window.open('resume/index.html', '_blank');
 };
 
-window.showContactPopup = function(event) {
+window.showContactPopup = function (event) {
     event.preventDefault();
     event.stopPropagation();
     const popup = document.querySelector('.contact-popup');
@@ -55,7 +21,7 @@ window.showContactPopup = function(event) {
     }
 };
 
-window.closeContactPopup = function() {
+window.closeContactPopup = function () {
     const popup = document.querySelector('.contact-popup');
     if (popup) {
         popup.style.display = 'none';
