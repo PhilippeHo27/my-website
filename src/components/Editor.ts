@@ -1,21 +1,23 @@
+import { ResumeLanguageData } from '../types/resume';
+
 export class Editor {
+    private currentData: ResumeLanguageData | null = null;
+    public isEditing: boolean = false;
+    public onSave: (() => Promise<void>) | null = null;
+    private controls: HTMLElement | null = null;
+
     constructor() {
-        this.currentData = null; // The specific language object (e.g. resumeData.en)
-        this.isEditing = false;
-        this.onSave = null; // Callback
         this.setupUI();
     }
 
-    bind(data) {
+    public bind(data: ResumeLanguageData): void {
         this.currentData = data;
-        // If we switch language while editing, we need to re-apply contentEditable
         if (this.isEditing) {
             this.applyEditable(true);
         }
     }
 
-    setupUI() {
-        // Container
+    private setupUI(): void {
         const container = document.createElement('div');
         container.id = 'editor-controls';
         container.style.cssText = `
@@ -33,19 +35,16 @@ export class Editor {
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       `;
 
-        // Save Button
         const saveBtn = document.createElement('button');
         saveBtn.innerText = '💾 Save';
         saveBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #2ecc71; color: white; cursor: pointer; font-weight: bold; transition: all 0.2s;';
         saveBtn.onclick = () => this.save();
 
-        // History Button
         const histBtn = document.createElement('button');
         histBtn.innerText = '📜 History';
         histBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #3498db; color: white; cursor: pointer; font-weight: bold; transition: all 0.2s;';
         histBtn.onclick = () => this.showHistory();
 
-        // Close Button
         const closeBtn = document.createElement('button');
         closeBtn.innerText = '❌ Close';
         closeBtn.style.cssText = 'padding: 8px 16px; border: none; border-radius: 4px; background: #e74c3c; color: white; cursor: pointer; font-weight: bold; transition: all 0.2s;';
@@ -57,8 +56,7 @@ export class Editor {
         document.body.appendChild(container);
         this.controls = container;
 
-        // Global Hotkey: Ctrl + Shift + E
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', (e: KeyboardEvent) => {
             if (e.ctrlKey && e.shiftKey && e.key === 'E') {
                 e.preventDefault();
                 this.toggleEditMode(!this.isEditing);
@@ -68,7 +66,7 @@ export class Editor {
         console.log('Editor initialized. Press Ctrl+Shift+E to edit.');
     }
 
-    async toggleEditMode(active) {
+    public async toggleEditMode(active: boolean): Promise<void> {
         if (active && !this.isEditing) {
             const password = prompt('Enter password to edit CV (Default: 0000):');
             if (password !== '0000') {
@@ -78,14 +76,16 @@ export class Editor {
         }
 
         this.isEditing = active;
-        this.controls.style.display = active ? 'flex' : 'none';
+        if (this.controls) {
+            this.controls.style.display = active ? 'flex' : 'none';
+        }
         this.applyEditable(active);
     }
 
-    async showHistory() {
+    private async showHistory(): Promise<void> {
         try {
             const response = await fetch('/api/backups');
-            const backups = await response.json();
+            const backups: string[] = await response.json();
 
             if (backups.length === 0) {
                 alert('No backups found yet.');
@@ -97,64 +97,66 @@ export class Editor {
                 backups.map((f, i) => `${i}: ${f}`).join('\n')
             );
 
-            if (selection !== null && backups[selection]) {
-                const confirmRes = confirm(`Are you sure you want to restore ${backups[selection]}? Current changes will be overwritten.`);
-                if (confirmRes) {
-                    const dataRes = await fetch(`/data/backups/${backups[selection]}`);
-                    const restoredData = await dataRes.json();
+            if (selection !== null) {
+                const idx = parseInt(selection);
+                if (!isNaN(idx) && backups[idx]) {
+                    const confirmRes = confirm(`Are you sure you want to restore ${backups[idx]}? Current changes will be overwritten.`);
+                    if (confirmRes) {
+                        const dataRes = await fetch(`/data/backups/${backups[idx]}`);
+                        const restoredData = await dataRes.json();
 
-                    // Directly save this back to the main file
-                    const saveRes = await fetch('/api/save', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(restoredData)
-                    });
+                        const saveRes = await fetch('/api/save', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(restoredData)
+                        });
 
-                    if (saveRes.ok) {
-                        alert('Backup restored successfully! Reloading...');
-                        window.location.reload();
-                    } else {
-                        throw new Error('Failed to save restored data');
+                        if (saveRes.ok) {
+                            alert('Backup restored successfully! Reloading...');
+                            window.location.reload();
+                        } else {
+                            throw new Error('Failed to save restored data');
+                        }
                     }
                 }
             }
-        } catch (e) {
+        } catch (e: any) {
             alert('Failed to fetch history: ' + e.message);
         }
     }
 
-    applyEditable(active) {
+    private applyEditable(active: boolean): void {
         const elements = document.querySelectorAll('[data-path]');
         elements.forEach(el => {
-            el.contentEditable = active;
+            const htmlEl = el as HTMLElement;
+            htmlEl.contentEditable = active ? 'true' : 'false';
             if (active) {
-                el.classList.add('editable-highlight');
-                // Remove old listener to avoid duplicates if re-binding
-                el.oninput = null;
-                el.oninput = (e) => this.handleInput(e, el.getAttribute('data-path'));
+                htmlEl.classList.add('editable-highlight');
+                htmlEl.oninput = (e: Event) => {
+                    const path = htmlEl.getAttribute('data-path');
+                    if (path) this.handleInput(e as InputEvent, path);
+                };
             } else {
-                el.classList.remove('editable-highlight');
-                el.oninput = null;
+                htmlEl.classList.remove('editable-highlight');
+                htmlEl.oninput = null;
             }
         });
     }
 
-    handleInput(e, path) {
+    private handleInput(e: Event, path: string): void {
         if (!this.currentData) return;
-        const value = e.target.innerText; // InnerText preserves newlines but removes HTML tags. Ideally we might want HTML for some fields.
-        // For now, assume text-only except for where we explicitly want HTML (like summary maybe?)
-        // renderer.js uses innerHTML for some fields?
-        // Resume content is mostly text.
-
+        const target = e.target as HTMLElement;
+        const value = target.innerText;
         this.updateDeep(this.currentData, path, value);
     }
 
-    updateDeep(obj, path, value) {
+    private updateDeep(obj: any, path: string, value: string): void {
         const keys = path.split('.');
         const last = keys.pop();
+        if (!last) return;
+
         let current = obj;
         for (const key of keys) {
-            // If key is a number (array index), it works with object syntax too in JS
             if (current[key] === undefined) {
                 console.error(`Invalid path: ${path}`);
                 return;
@@ -164,8 +166,9 @@ export class Editor {
         current[last] = value;
     }
 
-    async save() {
-        const btn = this.controls.querySelector('button'); // visual feedback
+    public async save(): Promise<void> {
+        if (!this.controls) return;
+        const btn = this.controls.querySelector('button') as HTMLButtonElement;
         const originalText = btn.innerText;
         btn.innerText = 'Saving...';
 
@@ -174,7 +177,7 @@ export class Editor {
                 await this.onSave();
                 btn.innerText = '✅ Saved';
                 setTimeout(() => btn.innerText = originalText, 2000);
-            } catch (e) {
+            } catch (e: any) {
                 alert('Save failed: ' + e.message);
                 btn.innerText = '❌ Error';
             }

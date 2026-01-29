@@ -1,4 +1,4 @@
-export function setText(id, text, dataPath) {
+export function setText(id: string, text: string, dataPath?: string): void {
     const el = document.getElementById(id);
     if (el) {
         el.textContent = text;
@@ -6,7 +6,7 @@ export function setText(id, text, dataPath) {
     }
 }
 
-export function setHTML(id, html, dataPath) {
+export function setHTML(id: string, html: string, dataPath?: string): void {
     const el = document.getElementById(id);
     if (el) {
         el.innerHTML = html;
@@ -14,7 +14,7 @@ export function setHTML(id, html, dataPath) {
     }
 }
 
-export function setList(id, items, createItemFn) {
+export function setList<T>(id: string, items: T[] | null | undefined, createItemFn: (item: T, index: number) => HTMLElement): void {
     const el = document.getElementById(id);
     if (!el || !items) return;
     el.innerHTML = '';

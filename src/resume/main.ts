@@ -1,13 +1,14 @@
 import '../styles/input.css';
-import { fetchResumeData } from '../components/ResumeLoader.js';
-import { renderResume } from './renderer.js';
-import { Editor } from '../components/Editor.js';
+import { fetchResumeData } from '../components/ResumeLoader';
+import { renderResume } from './renderer';
+import { Editor } from '../components/Editor';
+import { ResumeData } from '../types/resume';
 
-let resumeData = null;
-let currentLang = 'en';
-let editor = null;
+let resumeData: ResumeData | null = null;
+let currentLang: 'en' | 'fr' = 'en';
+let editor: Editor | null = null;
 
-async function init() {
+async function init(): Promise<void> {
     resumeData = await fetchResumeData();
 
     // Initialize Editor
@@ -44,7 +45,7 @@ async function init() {
             toggleBtn.textContent = currentLang === 'en' ? 'FR' : 'EN';
 
             // Re-render
-            if (resumeData) {
+            if (resumeData && editor) {
                 renderResume(resumeData[currentLang]);
                 editor.bind(resumeData[currentLang]);
             }
@@ -63,7 +64,9 @@ async function init() {
     const editToggle = document.getElementById('edit-toggle');
     if (editToggle) {
         editToggle.addEventListener('click', () => {
-            editor.toggleEditMode(!editor.isEditing);
+            if (editor) {
+                editor.toggleEditMode(!editor.isEditing);
+            }
         });
     }
 }

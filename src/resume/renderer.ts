@@ -1,6 +1,7 @@
-import { setText, setHTML, setList } from '../components/domUtils.js';
+import { setText, setHTML, setList } from '../components/domUtils';
+import { ResumeLanguageData, JobItem, ProjectItem, EducationItem } from '../types/resume';
 
-export function renderResume(data) {
+export function renderResume(data: ResumeLanguageData): void {
     // Meta
     document.title = data.meta.title;
 
@@ -12,9 +13,9 @@ export function renderResume(data) {
     setText('location', data.sidebar.location, 'sidebar.location');
 
     // Social Links (Website, LinkedIn, GitHub)
-    const websiteLink = document.getElementById('link-website');
-    const linkedinLink = document.getElementById('link-linkedin');
-    const githubLink = document.getElementById('link-github');
+    const websiteLink = document.getElementById('link-website') as HTMLAnchorElement | null;
+    const linkedinLink = document.getElementById('link-linkedin') as HTMLAnchorElement | null;
+    const githubLink = document.getElementById('link-github') as HTMLAnchorElement | null;
 
     if (data.sidebar.website && websiteLink) websiteLink.href = data.sidebar.website.url;
     if (data.sidebar.linkedin && linkedinLink) linkedinLink.href = data.sidebar.linkedin.url;
@@ -27,30 +28,28 @@ export function renderResume(data) {
 
     // Sidebar Sections
     const sectionsContainer = document.getElementById('sidebar-sections');
-    sectionsContainer.innerHTML = '';
+    if (sectionsContainer) {
+        sectionsContainer.innerHTML = '';
 
-    data.sidebar.sections.forEach((section, index) => {
-        const div = document.createElement('div');
-        div.className = 'sidebar-section';
-        // Note: Icons are tricky to edit visually, we focus on text
-        div.innerHTML = `
-        <h2><i class="${section.icon}" style="margin-right: 8px;"></i> <span data-path="sidebar.sections.${index}.title">${section.title}</span></h2>
-        <p data-path="sidebar.sections.${index}.content">${section.content}</p>
+        data.sidebar.sections.forEach((section, index) => {
+            const div = document.createElement('div');
+            div.className = 'sidebar-section';
+            div.innerHTML = `
+            <h2><i class="${section.icon}" style="margin-right: 8px;"></i> <span data-path="sidebar.sections.${index}.title">${section.title}</span></h2>
+            <p data-path="sidebar.sections.${index}.content">${section.content}</p>
+          `;
+            sectionsContainer.appendChild(div);
+        });
+
+        // Languages
+        const langDiv = document.createElement('div');
+        langDiv.className = 'sidebar-section';
+        langDiv.innerHTML = `
+        <h2><i class="fas fa-earth-americas" style="margin-right: 8px;"></i> <span data-path="sidebar.languages.title">${data.sidebar.languages.title}</span></h2>
+        <div data-path="sidebar.languages.items" data-array-join="<br>">${data.sidebar.languages.items.join('<br>')}</div>
       `;
-        sectionsContainer.appendChild(div);
-    });
-
-    // Languages
-    const langDiv = document.createElement('div');
-    langDiv.className = 'sidebar-section';
-    langDiv.innerHTML = `
-    <h2><i class="fas fa-earth-americas" style="margin-right: 8px;"></i> <span data-path="sidebar.languages.title">${data.sidebar.languages.title}</span></h2>
-    <!-- Languages items are an array of strings, tricky to map individually unless we split them or just treat as one block for now -->
-    <!-- Creating a helper to join them, but editing them individually is better. For now: edit the joined string logic in Editor? Or just data-path the whole block? -->
-    <!-- Let's map them to <div>s for editing -->
-    <div data-path="sidebar.languages.items" data-array-join="<br>">${data.sidebar.languages.items.join('<br>')}</div>
-  `;
-    sectionsContainer.appendChild(langDiv);
+        sectionsContainer.appendChild(langDiv);
+    }
 
     // Main Content
     setText('summary-title', data.main.summary.title, 'main.summary.title');
@@ -69,11 +68,10 @@ export function renderResume(data) {
     setList('education-list', data.main.education.items, createEducationElement);
 }
 
-function createJobElement(job, index) {
+function createJobElement(job: JobItem, index: number): HTMLElement {
     const basePath = `main.experience.items.${index}`;
     const div = document.createElement('div');
     div.className = 'job';
-    // Using spans for specific editable parts to preserve layout
     div.innerHTML = `
         <h3><span data-path="${basePath}.company">${job.company}</span>, <span data-path="${basePath}.role">${job.role}</span></h3>
         <div class="job-period" data-path="${basePath}.period">${job.period}</div>
@@ -84,7 +82,7 @@ function createJobElement(job, index) {
     return div;
 }
 
-function createProjectElement(project, index) {
+function createProjectElement(project: ProjectItem, index: number): HTMLElement {
     const basePath = `main.projects.items.${index}`;
     const div = document.createElement('div');
     div.className = 'project';
@@ -95,7 +93,7 @@ function createProjectElement(project, index) {
     return div;
 }
 
-function createEducationElement(edu, index) {
+function createEducationElement(edu: EducationItem, index: number): HTMLElement {
     const basePath = `main.education.items.${index}`;
     const div = document.createElement('div');
     div.className = 'school';

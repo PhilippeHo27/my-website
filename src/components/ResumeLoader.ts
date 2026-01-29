@@ -1,4 +1,6 @@
-export async function fetchResumeData() {
+import { ResumeData } from '../types/resume';
+
+export async function fetchResumeData(): Promise<ResumeData | null> {
     try {
         const response = await fetch('/data/resume.json');
         if (!response.ok) throw new Error('Failed to load resume data');
