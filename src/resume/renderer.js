@@ -10,7 +10,20 @@ export function renderResume(data) {
 
     // Contact Info
     setText('location', data.sidebar.location, 'sidebar.location');
-    // Website link logic simplified for brevity or need update for path
+
+    // Social Links (Website, LinkedIn, GitHub)
+    const websiteLink = document.getElementById('link-website');
+    const linkedinLink = document.getElementById('link-linkedin');
+    const githubLink = document.getElementById('link-github');
+
+    if (data.sidebar.website && websiteLink) websiteLink.href = data.sidebar.website.url;
+    if (data.sidebar.linkedin && linkedinLink) linkedinLink.href = data.sidebar.linkedin.url;
+    if (data.sidebar.github && githubLink) githubLink.href = data.sidebar.github.url;
+
+    // Hide if not available
+    if (websiteLink) websiteLink.style.display = data.sidebar.website ? 'inline-block' : 'none';
+    if (linkedinLink) linkedinLink.style.display = data.sidebar.linkedin ? 'inline-block' : 'none';
+    if (githubLink) githubLink.style.display = data.sidebar.github ? 'inline-block' : 'none';
 
     // Sidebar Sections
     const sectionsContainer = document.getElementById('sidebar-sections');
