@@ -6,8 +6,7 @@
     "server": "nodemon server.js"
   },
   "dependencies": {
-    "express": "^5.2.1",
-    "purgecss": "^7.0.2"
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.18",
