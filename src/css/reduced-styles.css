@@ -55,15 +55,27 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-font-sans-serif: 'IBM Plex Sans', -apple-system, sans-serif;
+  --bs-font-monospace: 'IBM Plex Mono', monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Muli, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  --bs-body-font-size: 1.35rem;
+  --bs-body-font-family: 'IBM Plex Mono', monospace;
+  /* Theme uses Mono everywhere */
+  --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-line-height: 1.75;
+  --discord-bg: #212737;
+  /* Astro Dark BG */
+  --discord-sidebar: #191e2a;
+  /* Slightly darker naval sidebar */
+  --discord-text: #eaedf3;
+  /* Astro Light Text */
+  --discord-heading: #ffffff;
+  --theme-accent: #ff6b01;
+  /* Astro Orange */
+  --theme-border: #ab4b08;
+  /* Astro Border Orange */
+  --theme-orange: #f26b38;
+  /* Saturated theme orange */
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
@@ -128,27 +140,41 @@ img {
 }
 
 
-h1, .h1, h2, .h2, h3, .h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+h1,
+.h1 {
+  font-family: 'IBM Plex Mono', var(--bs-font-monospace);
+  font-size: 4rem;
+  line-height: 1.1;
   font-weight: 700;
-  line-height: 1.2;
-  color: #343a40;
+  color: var(--theme-accent);
+  /* Use the new Astro Orange */
+  margin-bottom: 1.5rem;
+}
+
+h2,
+.h2 {
+  font-family: 'IBM Plex Mono', var(--bs-font-monospace);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  /* White section headers like Screenshot 0 */
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--theme-border);
+  /* Subtle underlined look from some Astro layouts */
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-h1, .h1 {
-  font-size: calc(1.725rem + 5.7vw);
-  line-height: 1;
-}
-
-h2, .h2 {
-  font-size: calc(1.475rem + 2.7vw);
-}
-
-h3, .h3 {
-  font-size: calc(1.325rem + 0.9vw);
+h3,
+.h3 {
+  font-family: 'IBM Plex Mono', var(--bs-font-monospace);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -179,7 +205,8 @@ a:hover {
   color: var(--bs-link-hover-color);
 }
 
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
@@ -241,7 +268,8 @@ section.resume-section .resume-section-content {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
-.nav-link:hover, .nav-link:focus {
+.nav-link:hover,
+.nav-link:focus {
   color: var(--bs-nav-link-hover-color);
 }
 
@@ -274,7 +302,7 @@ section.resume-section .resume-section-content {
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
 
-.navbar > .container-fluid {
+.navbar>.container-fluid {
   display: flex;
   flex-wrap: inherit;
   align-items: center;
@@ -291,7 +319,8 @@ section.resume-section .resume-section-content {
   white-space: nowrap;
 }
 
-.navbar-brand:hover, .navbar-brand:focus {
+.navbar-brand:hover,
+.navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
 }
 
@@ -496,6 +525,7 @@ button:not(:disabled),
   0% {
     transform: scale(0);
   }
+
   50% {
     opacity: 1;
     transform: none;
@@ -511,13 +541,20 @@ button:not(:disabled),
 @keyframes placeholder-wave {
   100% {
     -webkit-mask-position: -200% 0%;
-            mask-position: -200% 0%;
+    mask-position: -200% 0%;
   }
 }
 
 @keyframes bubble-appear {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .fixed-top {
@@ -529,25 +566,30 @@ button:not(:disabled),
 }
 
 .subheading {
-  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  text-transform: uppercase;
+  font-family: 'IBM Plex Mono', var(--bs-font-monospace);
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+  text-transform: none;
 }
 
 .social-icons .social-icon {
   display: inline-flex;
   margin-right: 1.5rem;
-  font-size: 4.25rem;
-  transition: color 0.2s ease;
+  font-size: 1.5rem;
+  color: var(--discord-text);
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.social-icons .social-icon:hover {
+  color: #ffffff;
+  opacity: 1;
 }
 
 .social-icons .social-icon:last-child {
   margin-right: 0;
-}
-
-.social-icons .social-icon:hover {
-  color: #6c757d;
 }
 
 
@@ -561,9 +603,9 @@ button:not(:disabled),
   z-index: 1000;
   background-color: transparent;
   pointer-events: none;
-  }
-  
-  .popup-content {
+}
+
+.popup-content {
   position: absolute;
   background-color: var(--discord-sidebar);
   padding: 15px;
@@ -574,9 +616,9 @@ button:not(:disabled),
   border: 1px solid #2c2f33;
   pointer-events: auto;
   max-width: calc(100vw - 40px);
-  }
-  
-  .close-popup {
+}
+
+.close-popup {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -586,7 +628,7 @@ button:not(:disabled),
   cursor: pointer;
   transition: color 0.2s ease;
   line-height: 1;
-  }
+}
 
 .close-popup:hover {
   color: var(--discord-heading);
@@ -619,7 +661,7 @@ button:not(:disabled),
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   justify-content: center;
   align-items: center;
 }
@@ -665,9 +707,9 @@ button:not(:disabled),
 }
 
 .webgl-embed-container {
-    position: relative;
-    overflow: hidden;
-    height: 600px;
+  position: relative;
+  overflow: hidden;
+  height: 600px;
 }
 
 .list-styled {
@@ -727,17 +769,18 @@ button:not(:disabled),
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
-  font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: normal;
+  font-family: 'Commit Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   line-height: 1.2;
   text-transform: uppercase;
   color: var(--discord-text);
 }
 
 #sideNav .navbar-nav .nav-item .nav-link:hover {
-  color: var(--discord-heading);
+  color: #dfc45b;
+  /* Gold on hover to match site brand */
 }
 
 #sideNav .navbar-toggler:focus {
@@ -749,6 +792,7 @@ button:not(:disabled),
   .flex-md-row {
     flex-direction: row !important;
   }
+
   section.resume-section {
     min-height: 100vh;
   }
@@ -758,19 +802,23 @@ button:not(:disabled),
   .d-lg-block {
     display: block !important;
   }
+
   .d-lg-none {
     display: none !important;
   }
+
   body {
     padding-top: 0;
     padding-left: 17rem;
   }
+
   section.resume-section {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+
   #sideNav {
     padding-left: 0;
     padding-right: 0;
@@ -783,16 +831,21 @@ button:not(:disabled),
     width: 17rem;
     height: 100vh;
   }
+
   #sideNav .navbar-brand {
     display: flex;
     margin: auto auto 0;
     padding: 0.5rem;
   }
+
   #sideNav .navbar-brand .img-profile {
     max-width: 10rem;
     max-height: 10rem;
-    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    border: 0.5rem solid #343a40;
+    /* Darker border like in the image */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   }
+
   #sideNav .navbar-collapse {
     display: flex;
     align-items: flex-start;
@@ -800,44 +853,58 @@ button:not(:disabled),
     width: 100%;
     margin-bottom: auto;
   }
+
   #sideNav .navbar-collapse .navbar-nav {
     flex-direction: column;
     width: 100%;
   }
+
   #sideNav .navbar-collapse .navbar-nav .nav-item {
     display: block;
   }
+
   #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
     display: block;
   }
+
   .navbar-expand-lg {
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
+
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
   }
+
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: var(--bs-navbar-nav-link-padding-x);
     padding-left: var(--bs-navbar-nav-link-padding-x);
   }
+
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
   }
+
   .navbar-expand-lg .navbar-toggler {
     display: none;
   }
 }
 
 @media (min-width: 1200px) {
-  h1, .h1 {
+
+  h1,
+  .h1 {
     font-size: 6rem;
   }
-  h2, .h2 {
+
+  h2,
+  .h2 {
     font-size: 3.5rem;
   }
-  h3, .h3 {
+
+  h3,
+  .h3 {
     font-size: 2rem;
   }
 }
@@ -849,31 +916,113 @@ button:not(:disabled),
 }
 
 body {
-    background-color: var(--discord-bg);
-    color: var(--discord-text);
-    font-family: 'JetBrains Mono', monospace;
+  background-color: var(--discord-bg);
+  color: var(--discord-text);
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .navbar {
-    background-color: var(--discord-sidebar) !important;
+  background-color: var(--discord-sidebar) !important;
 }
 
-h1, h2, h3, .subheading {
-    color: var(--discord-heading);
+.navbar {
+  background-color: var(--discord-sidebar) !important;
+}
+
+/* Consistent Toolkit Icons */
+.dev-icons {
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+
+.dev-icons .list-inline-item {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  color: #9ca3af;
+  position: relative;
+}
+
+.dev-icons .list-inline-item:hover {
+  transform: translateY(-5px);
+  color: #dfc45b;
+}
+
+/* Modern play button with gradient */
+.game-preview-link div,
+.play-demo-button {
+  font-size: 0.9rem;
+  padding: 0.8rem 1.75rem;
+  background: linear-gradient(135deg, #dfc45b 0%, #a89741 100%);
+  color: #191A1A;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(223, 196, 91, 0.3);
+  text-decoration: none;
+}
+
+.game-preview-link div:hover,
+.play-demo-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(223, 196, 91, 0.4);
+  background: linear-gradient(135deg, #e8d06a 0%, #b8a74d 100%);
+  color: #191A1A;
+}
+
+.game-video-container {
+  width: 100% !important;
+  max-width: 400px !important;
+  margin: 15px 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-video-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.game-video {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
 }
 
 .social-icons .social-icon {
   display: inline-flex;
   margin-right: 1.5rem;
-  font-size: 4.25rem;
+  font-size: 1.5rem;
   color: var(--discord-text);
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.social-icons .social-icon:hover {
+  color: var(--theme-accent);
+  opacity: 1;
 }
 
 .nav-link {
-    color: var(--discord-text) !important;
+  color: var(--discord-text) !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
 .nav-link:hover {
-    color: var(--discord-heading) !important;
+  color: var(--discord-heading) !important;
 }
