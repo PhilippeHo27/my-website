@@ -1,283 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Philippe Ho</title>
+  <meta name="description" content="Philippe Ho - Software Developer Portfolio">
+  <meta name="author" content="Philippe Ho">
+  <title>Philippe Ho | Software Developer</title>
   <link rel="icon" type="image/x-icon" href="/assets/img/tabicon2.ico">
-  <!-- Preconnect to external domains -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://use.fontawesome.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-  <!-- CSS handled by Vite main.js import -->
-
-  <!-- Load non-critical CSS asynchronously -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" media="print"
-    onload="this.media='all'">
-
-  <!-- Load fonts with font-display: swap -->
-  <!-- Typography: IBM Plex Mono for all branding/headers (AstroPaper style) -->
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
-  <!-- Load Font Awesome asynchronously -->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous" async></script>
 </head>
 
-<body id="page-top">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Philippe Ho</span>
-      <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-          src="/assets/img/profile2.jpg" alt="Headshot of Philippe Ho" loading="lazy"></span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
-        class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container-fluid p-0">
-    <section class="resume-section" id="about">
-      <div class="resume-section-content">
-        <h1 class="mb-0 custom-header"> Philippe Ho </h1>
-        <div class="subheading mb-5"></div>
-        <p class="lead mb-5" data-path="main.summary.content">
-          Based in Montréal, Canada, I'm a software developer with a focus on game development. My experience includes
-          shipping a commercial game title using Unity, and I'm currently building projects with both Unity and Unreal
-          Engine.
-        </p>
-        <p class="lead mb-5">
-          Actively seeking new opportunities in game development where I can contribute my experience while continuing
-          to grow technically. Currently working on multiplayer game projects to expand my expertise in networked
-          gameplay and cloud infrastructure.
-        </p>
-        <div class="social-icons mb-4">
-          <a class="social-icon" href="https://github.com/PhilippeHo27" target="_blank" aria-label="GitHub profile">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a class="social-icon" href="https://www.linkedin.com/in/philippe-ho" target="_blank"
-            aria-label="LinkedIn profile">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a class="social-icon" href="#" onclick="openResume(); return false;" aria-label="View Resume PDF">
-            <i class="fa-regular fa-file-pdf"></i>
-          </a>
-          <a class="social-icon" href="mailto:philippeho27@gmail.com" aria-label="Send Email">
-            <i class="fa-regular fa-envelope"></i>
-          </a>
-        </div>
+<body id="page-top" class="bg-background text-slate-400 selection:bg-name-bright/20 selection:text-white antialiased">
 
-        <div id="contact-popup" class="contact-popup">
-          <div class="popup-content">
-            <span class="close-popup" onclick="closeContactPopup()">&times;</span>
-            <h3>Contact Information</h3>
-            <p><i class="fas fa-envelope"></i> philippeho27@gmail.com</p>
-            <p><i class="fas fa-phone"></i> (514)713-5487</p>
-            <p><i class="fas fa-map-marker-alt"></i> Montréal, QC</p>
-          </div>
-        </div>
+  <main class="max-w-4xl mx-auto px-6 py-20 text-xl">
 
+    <!-- Hero / About Section -->
+    <section class="mb-32 flex flex-col items-center md:items-start text-center md:text-left">
+      <div class="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-12 mb-16 w-full">
+        <div class="flex flex-col items-center md:items-start">
+          <h1 class="text-6xl font-mono font-medium tracking-tighter text-name-bright">
+            Philippe Ho
+          </h1>
+          <p class="mt-6 text-2xl leading-relaxed text-slate-300">
+            Software/Game Developer
+          </p>
+        </div>
+        <div class="shrink-0 mx-auto md:mx-0">
+          <img src="/assets/img/profile2.jpg" alt="Philippe Ho"
+            class="w-40 h-40 rounded-full border border-white/10 object-cover shadow-2xl" />
+        </div>
+      </div>
+
+      <div class="space-y-10 max-w-3xl leading-relaxed">
+        <p>
+          Hi! I'm a Montreal-based developer focused on Unity and Unreal Engine. After shipping a title on Steam, I've
+          been diving into multiplayer development and experimenting with AI-assisted development and workflows.
+        </p>
+      </div>
+
+      <div class="mt-20 flex gap-10 text-3xl justify-center md:justify-start">
+        <a class="text-slate-500 hover:text-name-bright transition-colors" href="https://github.com/PhilippeHo27"
+          target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a class="text-slate-500 hover:text-name-bright transition-colors"
+          href="https://www.linkedin.com/in/philippe-ho" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a class="text-slate-500 hover:text-name-bright transition-colors" href="#"
+          onclick="openResume(); return false;" aria-label="Resume">
+          <i class="fa-regular fa-file-pdf"></i>
+        </a>
+        <a class="text-slate-500 hover:text-name-bright transition-colors" href="mailto:philippeho27@gmail.com"
+          aria-label="Email">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
       </div>
     </section>
-    <hr class="m-0">
-    <section class="resume-section" id="experience">
-      <div class="resume-section-content">
-        <h2 class="mb-5 custom-header" data-path="main.experience.title">Experience</h2>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header" data-path="main.experience.items.0.company">Téléfix Productions</h3>
-            <div class="subheading mb-3" data-path="main.experience.items.0.role">Game Programmer</div>
-            <p class="lead" data-path="main.experience.items.0.description_short">Developed a Steam-published
-              construction game, implementing essential gameplay systems
-              including character movement, save functionality, shader effects, UI/UX, and sound integration.</p>
+
+    <div class="space-y-32">
+
+      <!-- Experience Section -->
+      <section id="experience">
+        <h2 class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-16 border-b border-white/5 pb-4 font-mono">
+          Experience</h2>
+        <div class="space-y-24">
+          <!-- Job 1 -->
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
+              <h3 class="text-2xl font-medium text-accent">Téléfix Productions</h3>
+              <span class="text-xs font-mono text-slate-600 uppercase tracking-wider">Jan 2024 — Nov 2024</span>
+            </div>
+            <p class="text-base font-mono text-slate-500 mb-6 italic">Game Programmer</p>
+            <p class="mb-8 leading-relaxed">
+              Developed a Steam-published construction game, implementing essential gameplay systems including character
+              movement, save functionality, shader effects, UI/UX, and sound integration.
+            </p>
             <a href="https://store.steampowered.com/app/3113740/Dont_Drop_The_Wall_Jack/" target="_blank"
-              rel="noopener">
-              <div class="game-video-container">
-                <video autoplay loop muted playsinline class="game-video" loading="lazy"
-                  title="Gameplay footage of Don't Drop The Wall Jack">
+              class="block group">
+              <div class="game-video-container border border-white/10 group-hover:border-accent/30 transition-colors">
+                <video autoplay loop muted playsinline class="game-video" loading="lazy">
                   <source src="/assets/img/dontdrop.webm" type="video/webm">
-                  Your browser does not support the video tag.
                 </video>
               </div>
             </a>
           </div>
-          <div class="flex-shrink-0"><span class="subheading date-text">January 2024 - November 2024</span></div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header">Small Detour Games</h3>
-            <div class="subheading mb-3">Programmer Intern</div>
-            <p class="lead">Worked on implementing features including a hidden NPC relationship meter for tracking
-              growth. Developed trigger points for specific events and interactions.</p>
-            <a href="https://store.steampowered.com/app/2707880/Troubadours/" target="_blank" rel="noopener">
-              <div class="game-video-container">
-                <video autoplay loop muted playsinline class="game-video" loading="lazy"
-                  title="Gameplay footage of Don't Drop The Wall Jack">
+
+          <!-- Job 2 -->
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
+              <h3 class="text-2xl font-medium text-accent">Small Detour Games</h3>
+              <span class="text-xs font-mono text-slate-600 uppercase tracking-wider">Mar 2023 — Jun 2023</span>
+            </div>
+            <p class="text-base font-mono text-slate-500 mb-6 italic">Programmer Intern</p>
+            <p class="mb-8 leading-relaxed">
+              Worked on implementing features including a hidden NPC relationship meter for tracking growth. Developed
+              trigger points for specific events and interactions.
+            </p>
+            <a href="https://store.steampowered.com/app/2707880/Troubadours/" target="_blank" class="block group">
+              <div class="game-video-container border border-white/10 group-hover:border-accent/30 transition-colors">
+                <video autoplay loop muted playsinline class="game-video" loading="lazy">
                   <source src="/assets/img/troubadour.webm" type="video/webm">
-                  Your browser does not support the video tag.
                 </video>
               </div>
             </a>
           </div>
-          <div class="flex-shrink-0"><span class="subheading date-text">March 2023 - June 2023</span></div>
+
+          <!-- Toolkit -->
+          <div class="pt-20">
+            <h4 class="text-xs uppercase tracking-[0.2em] text-slate-600 mb-10 font-mono">Core Stack</h4>
+            <ul class="flex flex-wrap gap-12 text-5xl opacity-30">
+              <li title="C++" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-cplusplus-plain"></i></li>
+              <li title="C#" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-csharp-plain"></i></li>
+              <li title="Unity" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-unity-plain"></i></li>
+              <li title="Unreal Engine" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-unrealengine-original"></i></li>
+              <li title="Godot" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-godot-plain"></i></li>
+              <li title="Python" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-python-plain"></i></li>
+              <li title="AWS" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-amazonwebservices-plain-wordmark"></i></li>
+              <li title="Docker" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-docker-plain"></i></li>
+              <li title="Git" class="hover:text-accent hover:opacity-100 transition-all"><i
+                  class="devicon-git-plain"></i></li>
+            </ul>
+          </div>
         </div>
+      </section>
 
-        <div class="subheading mb-4"
-          style="color: var(--discord-heading); font-size: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.5rem; display: inline-block;">
-          Toolkit</div>
-        <ul class="list-inline dev-icons mb-0" style="max-width: 600px;">
-          <!-- Game Engines & Core Languages -->
-          <li class="list-inline-item" title="C++"><i class="devicon-cplusplus-plain"></i></li>
-          <li class="list-inline-item" title="C#"><i class="devicon-csharp-plain"></i></li>
-          <li class="list-inline-item" title="Unity"><i class="devicon-unity-plain"></i></li>
-          <li class="list-inline-item" title="Unreal Engine"><i class="devicon-unrealengine-original"></i></li>
-          <li class="list-inline-item" title="Godot"><i class="devicon-godot-plain"></i></li>
-          <li class="list-inline-item" title="Blender"><i class="devicon-blender-original"></i></li>
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2 class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-16 border-b border-white/5 pb-4 font-mono">
+          Selected Works</h2>
+        <div class="space-y-24">
+          <div class="space-y-6">
+            <h3 class="text-3xl font-medium text-accent">Unity WebSocket Multiplayer Project</h3>
+            <p class="text-base font-mono text-slate-500">Workshop for real-time networked prototypes</p>
+            <ul class="list-none space-y-4 text-lg leading-relaxed">
+              <li class="flex items-start"><span class="text-accent mr-4">→</span>Implemented real-time gameplay with
+                custom WebSocket communication.</li>
+              <li class="flex items-start"><span class="text-accent mr-4">→</span>Deployed on AWS EC2 with high
+                availability configurations.</li>
+            </ul>
+            <a href="https://philippeho.popnux.com/workshopgames/" target="_blank"
+              class="inline-block mt-8 text-sm font-mono uppercase tracking-widest text-accent border border-accent/20 px-6 py-3 hover:bg-accent hover:text-background transition-all">
+              Live Demo
+            </a>
+          </div>
 
-          <!-- Programming & Scripting -->
-          <li class="list-inline-item" title="Python"><i class="devicon-python-plain"></i></li>
-          <li class="list-inline-item" title="JavaScript"><i class="devicon-javascript-plain"></i></li>
-          <li class="list-inline-item" title="TypeScript"><i class="devicon-typescript-plain"></i></li>
-          <li class="list-inline-item" title="Node.js"><i class="devicon-nodejs-plain"></i></li>
+          <div class="space-y-4">
+            <h3 class="text-3xl font-medium text-accent">Dedicated Server & Cloud Backend</h3>
+            <p class="text-base font-mono text-slate-500">AWS & Unreal Engine Integration</p>
+            <p class="leading-relaxed text-lg">
+              Scalable cloud backend solutions using GameLift, API Gateway, and DynamoDB for global multiplayer
+              synchronization and persistent player data.
+            </p>
+          </div>
 
-          <!-- Cloud & Infrastructure -->
-          <li class="list-inline-item" title="AWS"><i class="devicon-amazonwebservices-plain-wordmark"></i></li>
-          <li class="list-inline-item" title="Docker"><i class="devicon-docker-plain"></i></li>
-          <li class="list-inline-item" title="Linux"><i class="devicon-linux-plain"></i></li>
-          <li class="list-inline-item" title="Git"><i class="devicon-git-plain"></i></li>
+          <div class="space-y-4">
+            <h3 class="text-3xl font-medium text-accent">Unreal Engine Multiplayer Shooter</h3>
+            <p class="text-base font-mono text-slate-500">C++ Competitive Game Architecture</p>
+            <p class="leading-relaxed text-lg">
+              Features advanced replication models, lag compensation strategies (prediction/rewind), and robust
+              matchmaking sessions for high-performance scale.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <!-- Data & Web -->
-          <li class="list-inline-item" title="MySQL"><i class="devicon-mysql-plain"></i></li>
-          <li class="list-inline-item" title="HTML5"><i class="devicon-html5-plain"></i></li>
-          <li class="list-inline-item" title="CSS3"><i class="devicon-css3-plain"></i></li>
-        </ul>
-      </div>
-    </section>
-    <hr class="m-0">
-    <section class="resume-section" id="projects">
-      <div class="resume-section-content">
-        <h2 class="mb-5 custom-header" data-path="main.projects.title">Projects</h2>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header" data-path="main.projects.items.0.title">Unity WebSocket Multiplayer Project
-            </h3>
-            <div class="subheading mb-3 subheading" data-path="main.projects.items.0.subtitle">A workshop for Prototypes
+      <!-- Education Section -->
+      <section id="education" class="pb-32">
+        <h2 class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-16 border-b border-white/5 pb-4 font-mono">
+          Background</h2>
+        <div class="space-y-12">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+            <div>
+              <h3 class="text-xl font-medium text-accent">Collège de Bois-de-Boulogne</h3>
+              <p class="text-sm font-mono text-slate-500 mt-2">A.E.C. - Video Game Programming</p>
             </div>
-            <ul class="list-styled">
-              <li data-path="main.projects.items.0.points.0">Workshop for a couple of games to test out multiplayer
-                functionalities</li>
-              <li data-path="main.projects.items.0.points.1">Implemented real-time gameplay using WebSocket
-                communication</li>
-              <li data-path="main.projects.items.0.points.2">Deployed on AWS EC2 with always-on server availability</li>
-              <li data-path="main.projects.items.0.points.3">JavaScript for web integration and Linux for server
-                management</li>
-            </ul>
-            <div class="game-preview-container mb-3" style="text-align: left;">
-              <a href="https://philippeho.popnux.com/workshopgames/" target="_blank" rel="noopener noreferrer"
-                class="game-preview-link">
-                <div class="play-demo-button">
-                  Click to Play
-                </div>
-              </a>
+            <span class="text-sm font-mono text-slate-600">2022 — 2023</span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+            <div>
+              <h3 class="text-xl font-medium text-accent">Concordia University</h3>
+              <p class="text-sm font-mono text-slate-500 mt-2">Bachelors - Civil Engineering (56 credits)</p>
             </div>
+            <span class="text-sm font-mono text-slate-600">2008 — 2011</span>
           </div>
         </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header">Dedicated Server &amp; Cloud Backend</h3>
-            <div class="subheading mb-3">AWS &amp; Unreal Engine Course</div>
-            <p class="lead">
-              A comprehensive course project focused on deploying dedicated servers and creating robust cloud backend
-              solutions for Unreal Engine games. Topics include compiling Unreal Engine from source, integrating
-              GameLift, making API calls via the AWS CLI, setting up secure user pools with Amazon Cognito, building
-              REST APIs with Amazon API Gateway, and managing persistent game data with DynamoDB. This project is
-              designed for scaling multiplayer experiences to a global audience.
-            </p>
-          </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header">Unreal Engine Multiplayer Shooter</h3>
-            <div class="subheading mb-3">Competitive Multiplayer C++ Game</div>
-            <p class="lead">
-              Developed a competitive multiplayer shooter using Unreal Engine. The project features matchmaking
-              sessions, a custom plugin to convert single-player projects into multiplayer experiences, advanced
-              replication techniques, and lag compensation (including client-side prediction and server-side rewind). It
-              also includes a diverse arsenal of weapons, pickups, and a fully functional HUD — all optimized for
-              high-performance and scalability.
-            </p>
-          </div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header">UE5 Action-RPG Open World Adventure</h3>
-            <div class="subheading mb-3">C++ Open World Game Development</div>
-            <p class="lead">
-              Built an action-RPG open world game entirely in Unreal Engine 5. This project includes third-person combat
-              with melee weapons, dynamic enemy AI, health bars, and immersive open world design using Quixel Megascans.
-              Enhanced features such as motion warping, MetaSounds, particle effects, and advanced animation systems
-              were integrated alongside best coding practices and optimal data structures.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr class="m-0">
-    <section class="resume-section" id="education">
-      <div class="resume-section-content">
-        <h2 class="mb-5 custom-header">Education</h2>
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header project-title">Collège de Bois-de-Boulogne</h3>
-            <div class="subheading mb-3">A.E.C. - Video Game Programming</div>
-            <ul class="list-styled">
-              <li>Learned Unreal and Unity game engines.</li>
-              <li>Programming in C++ and C#.</li>
-              <li>Version control with GitHub and Perforce.</li>
-            </ul>
-          </div>
-          <div class="flex-shrink-0"><span class="subheading date-text">2022 - 2023</span></div>
-        </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between">
-          <div class="flex-grow-1">
-            <h3 class="mb-0 custom-header project-title">Concordia University</h3>
-            <div class="subheading mb-3">Bachelors - Civil Engineering (56 completed credits)</div>
-            <ul class="list-styled">
-              <li>Developed strong analytical and problem-solving abilities.</li>
-            </ul>
-          </div>
-          <div class="flex-shrink-0"><span class="subheading date-text">2008 - 2011</span></div>
-        </div>
-      </div>
-    </section>
-  </div>
+      </section>
 
-  <div id="resumeOverlay" class="overlay" style="display: none;">
-    <span class="close" onclick="closeResume()">&times;</span>
-    <div class="pdf-container">
-      <canvas id="pdf-render"></canvas>
-      <div class="resume-controls">
-        <button onclick="downloadPDF()">Download PDF</button>
-        <button onclick="printPDF()">Print PDF</button>
+    </div>
+
+  </main>
+
+  <!-- Popup -->
+  <div id="contact-popup" class="contact-popup">
+    <div class="popup-content font-mono text-sm">
+      <span class="absolute top-4 right-6 text-3xl font-light cursor-pointer hover:text-name-bright transition-colors"
+        onclick="closeContactPopup()">&times;</span>
+      <h3 class="text-xl mb-6 text-name-bright tracking-tight">Connect</h3>
+      <div class="space-y-4 border-t border-white/5 pt-6 text-slate-400">
+        <p class="flex items-center hover:text-white transition-colors"><i
+            class="fas fa-envelope mr-4 text-accent w-4 text-center"></i> philippeho27@gmail.com</p>
+        <p class="flex items-center hover:text-white transition-colors"><i
+            class="fas fa-phone mr-4 text-accent w-4 text-center"></i> (514) 713-5487</p>
+        <p class="flex items-center hover:text-white transition-colors"><i
+            class="fas fa-map-marker-alt mr-4 text-accent w-4 text-center"></i> Montréal, QC</p>
       </div>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="/main.js"></script>
 </body>
 

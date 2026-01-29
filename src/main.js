@@ -1,4 +1,3 @@
-import './css/reduced-styles.css';
 import './styles/input.css';
 // Landing page logic
 
