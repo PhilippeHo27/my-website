@@ -128,79 +128,201 @@
               </div>
             </a>
           </div>
-
-          <!-- Toolkit -->
-          <div class="pt-20">
-            <h4 class="text-xs uppercase tracking-[0.2em] text-slate-600 mb-10 font-mono">Core Stack</h4>
-            <ul class="flex flex-wrap gap-12 text-5xl opacity-30">
-              <li title="C++" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-cplusplus-plain"></i></li>
-              <li title="C#" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-csharp-plain"></i></li>
-              <li title="Unity" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-unity-plain"></i></li>
-              <li title="Unreal Engine" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-unrealengine-original"></i></li>
-              <li title="Godot" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-godot-plain"></i></li>
-              <li title="Python" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-python-plain"></i></li>
-              <li title="AWS" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-amazonwebservices-plain-wordmark"></i></li>
-              <li title="Docker" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-docker-plain"></i></li>
-              <li title="Git" class="hover:text-accent hover:opacity-100 transition-all"><i
-                  class="devicon-git-plain"></i></li>
-            </ul>
-          </div>
         </div>
       </section>
 
-      <!-- Projects Section -->
-      <section id="projects">
-        <h2 class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-16 border-b border-white/5 pb-4 font-mono">
-          Selected Works</h2>
+      <!-- PROJECTS MAIN SECTION -->
+      <section id="projects" class="pb-32">
+        <h2 class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-20 border-b border-white/5 pb-4 font-mono">
+          Projects</h2>
+
         <div class="space-y-24">
-          <div class="space-y-6">
-            <h3 class="text-3xl font-medium text-accent">Unity WebSocket Multiplayer Project</h3>
-            <p class="text-base font-mono text-slate-500">Workshop for real-time networked prototypes</p>
-            <ul class="list-none space-y-4 text-lg leading-relaxed">
-              <li class="flex items-start"><span class="text-accent mr-4">→</span>Implemented real-time gameplay with
-                custom WebSocket communication.</li>
-              <li class="flex items-start"><span class="text-accent mr-4">→</span>Deployed on AWS EC2 with high
-                availability configurations.</li>
-            </ul>
-            <a href="https://philippeho.popnux.com/workshopgames/" target="_blank"
-              class="inline-block mt-8 text-sm font-mono uppercase tracking-widest text-accent border border-accent/20 px-6 py-3 hover:bg-accent hover:text-background transition-all">
-              Live Demo
-            </a>
+
+          <!-- SUB-SECTION 1: GAME DEVELOPMENT -->
+          <div id="game-development">
+            <h3 class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-8">Game Development</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              <!-- Unity WebSocket (Full Width - Cyan Theme) -->
+              <div onclick="openProjectModal('https://philippeho.popnux.com/workshopgames/', 'Unity WebSocket')"
+                class="md:col-span-2 group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-8 md:p-12 cursor-pointer transition-all hover:border-cyan-400/40 hover:shadow-[0_0_40px_-15px_rgba(34,211,238,0.15)]">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 h-full">
+                  <div class="relative z-10 flex-1">
+                    <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-400/60 mb-2 block">Real-time
+                      Multiplayer</span>
+                    <h3 class="text-3xl md:text-4xl font-medium text-cyan-400 mb-6">Unity WebSocket Workshop</h3>
+                    <p class="text-slate-400 text-lg md:text-xl max-w-xl leading-relaxed">A live playground for testing
+                      real-time networked gameplay prototypes using custom WebSocket communication.</p>
+                  </div>
+
+                  <button
+                    class="absolute top-4 right-4 md:top-6 md:right-6 p-1.5 md:p-2 rounded-lg text-slate-600 group-hover:text-cyan-400 group-hover:bg-white/5 transition-all duration-200"
+                    title="Expand Details">
+                    <i class="fa-solid fa-up-right-from-square text-xs md:text-sm"></i>
+                  </button>
+                  <div
+                    class="hidden md:block text-7xl opacity-5 group-hover:opacity-10 text-cyan-400 transition-opacity">
+                    <i class="fa-solid fa-network-wired"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Unreal Engine Certifications (Carousel Opener) -->
+              <div onclick="openCertificateModal()"
+                class="md:col-span-2 group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-8 md:p-12 cursor-pointer transition-all hover:border-white/40 hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)]">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 h-full">
+                  <div class="relative z-10 flex-1">
+                    <span
+                      class="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400/60 mb-2 block">Certification
+                      Program</span>
+                    <h3 class="text-3xl md:text-4xl font-medium text-white mb-6">Unreal Engine 5 Architecture</h3>
+                    <p class="text-slate-400 text-lg md:text-xl max-w-xl leading-relaxed">Advanced coursework in C++
+                      Multiplayer, Dedicated Servers (AWS GameLift), and Gameplay Frameworks.</p>
+                  </div>
+
+                  <button
+                    class="absolute top-4 right-4 md:top-6 md:right-6 p-1.5 md:p-2 rounded-lg text-slate-600 group-hover:text-white group-hover:bg-white/5 transition-all duration-200"
+                    title="View Certificates">
+                    <i class="fa-solid fa-expand text-xs md:text-sm"></i>
+                  </button>
+                  <div class="hidden md:block text-7xl opacity-5 group-hover:opacity-10 text-white transition-opacity">
+                    <!-- Using UE icon -->
+                    <i class="devicon-unrealengine-original"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="space-y-4">
-            <h3 class="text-3xl font-medium text-accent">Dedicated Server & Cloud Backend</h3>
-            <p class="text-base font-mono text-slate-500">AWS & Unreal Engine Integration</p>
-            <p class="leading-relaxed text-lg">
-              Scalable cloud backend solutions using GameLift, API Gateway, and DynamoDB for global multiplayer
-              synchronization and persistent player data.
-            </p>
+          <!-- SUB-SECTION 2: WEB DEVELOPMENT -->
+          <div id="web-development">
+            <h3 class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-8">Web Development</h3>
+
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-6">
+
+              <!-- TurboReader (Updated Text) -->
+              <div onclick="openProjectModal('https://philippeho27.github.io/TurboReader/', 'TurboReader')"
+                class="col-span-2 md:col-span-4 group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-8 cursor-pointer transition-all hover:border-emerald-400/40 hover:shadow-[0_0_30px_-10px_rgba(52,211,153,0.1)]">
+                <div class="relative z-10">
+                  <span
+                    class="text-[10px] font-mono uppercase tracking-[0.2em] text-emerald-400/60 mb-2 block">Developer
+                    Tool</span>
+                  <h3 class="text-2xl md:text-3xl font-medium text-emerald-400 mb-4">TurboReader</h3>
+                  <p class="text-slate-400 text-sm md:text-lg max-w-xl">High-speed reading interface using RSVP
+                    technology to simulate rapid serial visual presentation of text.</p>
+                </div>
+
+                <button
+                  class="absolute top-4 right-4 md:top-6 md:right-6 p-1.5 md:p-2 rounded-lg text-slate-600 group-hover:text-emerald-400 group-hover:bg-white/5 transition-all duration-200"
+                  title="Expand">
+                  <i class="fa-solid fa-up-right-from-square text-xs md:text-sm"></i>
+                </button>
+              </div>
+
+              <!-- MP3 Maker (Updated Text) -->
+              <div onclick="openProjectModal('https://philippeho.popnux.com/mp3maker/', 'MP3 Maker')"
+                class="col-span-1 md:col-span-2 group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-6 md:p-8 cursor-pointer transition-all hover:border-violet-400/40 hover:shadow-[0_0_30px_-10px_rgba(167,139,250,0.1)]">
+                <div class="relative z-10">
+                  <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-violet-400/60 mb-2 block">Audio
+                    Utility</span>
+                  <h3 class="text-xl md:text-2xl font-medium text-violet-400 mb-4">MP3 Maker</h3>
+                  <p class="text-slate-400 text-sm hidden sm:block">Toolkit for converting streaming links from YouTube,
+                    Bandcamp, and SoundCloud into private audio archives.</p>
+                </div>
+
+                <button
+                  class="absolute top-4 right-4 md:top-6 md:right-6 p-1.5 md:p-2 rounded-lg text-slate-600 group-hover:text-violet-400 group-hover:bg-white/5 transition-all duration-200"
+                  title="Expand">
+                  <i class="fa-solid fa-up-right-from-square text-xs md:text-sm"></i>
+                </button>
+              </div>
+
+              <!-- Job Viewer -->
+              <div onclick="openProjectModal('https://philippeho.popnux.com/job-viewer/', 'Job Viewer')"
+                class="col-span-1 md:col-span-3 group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-6 md:p-8 cursor-pointer transition-all hover:border-amber-400/40 hover:shadow-[0_0_30px_-10px_rgba(251,191,36,0.1)]">
+                <div class="relative z-10">
+                  <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-amber-400/60 mb-2 block">Data
+                    App</span>
+                  <h3 class="text-xl md:text-2xl font-medium text-amber-400 mb-4">Job Viewer</h3>
+                  <p class="text-slate-400 text-sm hidden sm:block">A specialized dashboard for filtering and analyzing
+                    technical job postings.</p>
+                </div>
+
+                <button
+                  class="absolute top-4 right-4 md:top-6 md:right-6 p-1.5 md:p-2 rounded-lg text-slate-600 group-hover:text-amber-400 group-hover:bg-white/5 transition-all duration-200"
+                  title="Expand">
+                  <i class="fa-solid fa-up-right-from-square text-xs md:text-sm"></i>
+                </button>
+              </div>
+
+              <!-- Personal SoundCloud (Updated Text) -->
+              <div
+                onclick="openProjectModal('https://philippeho.popnux.com/personalsoundcloud/', 'Personal SoundCloud')"
+                class="col-span-2 md:col-span-3 group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-8 cursor-pointer transition-all hover:border-rose-400/40 hover:shadow-[0_0_30px_-10px_rgba(251,113,133,0.1)]">
+                <div class="relative z-10">
+                  <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-rose-400/60 mb-2 block">Audio
+                    Platform</span>
+                  <h3 class="text-2xl font-medium text-rose-400 mb-4">Personal SoundCloud</h3>
+                  <p class="text-slate-400 text-sm">Custom streaming logic for private audio archives.</p>
+                </div>
+
+                <button
+                  class="absolute top-4 right-4 md:top-6 md:right-6 p-1.5 md:p-2 rounded-lg text-slate-600 group-hover:text-rose-400 group-hover:bg-white/5 transition-all duration-200"
+                  title="Expand">
+                  <i class="fa-solid fa-up-right-from-square text-xs md:text-sm"></i>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div class="space-y-4">
-            <h3 class="text-3xl font-medium text-accent">Unreal Engine Multiplayer Shooter</h3>
-            <p class="text-base font-mono text-slate-500">C++ Competitive Game Architecture</p>
-            <p class="leading-relaxed text-lg">
-              Features advanced replication models, lag compensation strategies (prediction/rewind), and robust
-              matchmaking sessions for high-performance scale.
-            </p>
+          <!-- SUB-SECTION 3: AUTOMATION & SYSTEMS -->
+          <div id="automation">
+            <h3 class="text-xs font-mono text-slate-600 uppercase tracking-widest mb-8">Automation & Systems</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- n8n Workflow -->
+              <div onclick="openImageModal('/assets/img/n8n-workflow.png', 'n8n Job Scraper')"
+                class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-8 cursor-pointer transition-all hover:border-white/40 hover:shadow-[0_0_30px_-10px_rgba(255,255,255,0.05)]">
+                <div class="relative z-10 h-full flex flex-col justify-end">
+                  <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40 mb-2 block">Workflow
+                    Automation</span>
+                  <h3 class="text-2xl md:text-3xl font-medium text-white mb-4">n8n Job Scraper</h3>
+                  <p class="text-slate-400 text-sm md:text-lg max-w-md">Job listings scraper. Fetches LinkedIn data,
+                    cleans with LLM, and displays on custom frontend.</p>
+                </div>
+
+                <button
+                  class="absolute top-4 right-4 md:top-6 md:right-6 p-1.5 md:p-2 rounded-lg text-slate-600 group-hover:text-white group-hover:bg-white/5 transition-all duration-200"
+                  title="View Workflow">
+                  <i class="fa-solid fa-expand text-xs md:text-sm"></i>
+                </button>
+              </div>
+
+              <!-- OpenClaw (formerly Moltbot) -->
+              <div
+                class="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-8 cursor-default transition-all">
+                <div class="relative z-10 h-full flex flex-col justify-start">
+                  <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-white/40 mb-2 block">Local Agent
+                    Platform</span>
+                  <h3 class="text-2xl md:text-3xl font-medium text-white mb-4">OpenClaw</h3>
+                  <p class="text-slate-400 text-sm md:text-lg max-w-md">Open-source agent platform. Runs locally to
+                    automate Discord, Slack, and Telegram.</p>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
-      <!-- Education Section -->
-      <section id="education" class="pb-32">
+      <!-- Education & Core Stack (Consolidated Footer) -->
+      <section id="background" class="pb-32">
         <h2 class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-16 border-b border-white/5 pb-4 font-mono">
-          Background</h2>
-        <div class="space-y-12">
+          Background & Stack</h2>
+
+        <!-- Education -->
+        <div class="space-y-12 mb-20">
           <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
             <div>
               <h3 class="text-xl font-medium text-accent">Collège de Bois-de-Boulogne</h3>
@@ -216,6 +338,31 @@
             <span class="text-sm font-mono text-slate-600">2008 — 2011</span>
           </div>
         </div>
+
+        <!-- Core Stack (Moved Here) -->
+        <div class="pt-10 border-t border-white/5">
+          <h4 class="text-xs uppercase tracking-[0.2em] text-slate-600 mb-10 font-mono mt-10">Toolkit</h4>
+          <ul class="flex flex-wrap gap-12 text-5xl opacity-30">
+            <li title="C++" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-cplusplus-plain"></i></li>
+            <li title="C#" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-csharp-plain"></i></li>
+            <li title="Unity" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-unity-plain"></i></li>
+            <li title="Unreal Engine" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-unrealengine-original"></i></li>
+            <li title="Godot" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-godot-plain"></i></li>
+            <li title="Python" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-python-plain"></i></li>
+            <li title="AWS" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-amazonwebservices-plain-wordmark"></i></li>
+            <li title="Docker" class="hover:text-accent hover:opacity-100 transition-all"><i
+                class="devicon-docker-plain"></i></li>
+            <li title="Git" class="hover:text-accent hover:opacity-100 transition-all"><i class="devicon-git-plain"></i>
+            </li>
+          </ul>
+        </div>
       </section>
 
     </div>
@@ -223,6 +370,139 @@
   </main>
 
   <script type="module" src="/main.ts"></script>
+
+  <!-- Live Browser & Carousel Modal -->
+  <div id="project-modal"
+    class="fixed inset-0 z-200 hidden items-center justify-center p-4 md:p-12 bg-black/80 backdrop-blur-md">
+    <div id="modal-content"
+      class="relative w-full h-full max-w-6xl bg-[#0a0a0a] rounded-xl border border-white/10 shadow-2xl overflow-hidden flex flex-col">
+
+      <!-- Browser Top Bar -->
+      <div class="h-10 bg-[#1a1a1a] border-b border-white/10 flex items-center px-4 justify-between shrink-0">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-earth-americas text-slate-600 text-xs"></i>
+          <span id="modal-title" class="text-[10px] font-mono text-slate-500 uppercase tracking-widest ml-2">Web
+            Preview</span>
+        </div>
+
+        <div class="hidden md:flex flex-1 mx-20 items-center justify-center">
+          <div
+            class="bg-black/40 border border-white/5 px-4 py-1 rounded-md text-[10px] font-mono text-slate-500 flex items-center gap-2 min-w-[300px] justify-center">
+            <i class="fa-solid fa-lock text-[8px]"></i>
+            <span id="modal-url-display">philippeho.popnux.com</span>
+          </div>
+        </div>
+
+        <button onclick="closeProjectModal()" class="text-slate-500 hover:text-white transition-colors"
+          aria-label="Close modal">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Content Container -->
+      <div class="flex-1 bg-white relative">
+
+        <!-- IFRAME MODE (Default) -->
+        <div id="iframe-container" class="absolute inset-0 w-full h-full">
+          <!-- Loading State -->
+          <div id="loading-spinner"
+            class="absolute inset-0 flex flex-col items-center justify-center bg-[#0a0a0a] z-50">
+            <div class="w-8 h-8 border-2 border-accent/20 border-t-accent rounded-full animate-spin mb-4"></div>
+            <p class="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Connecting to host...</p>
+          </div>
+
+          <!-- Error State (Hidden by default) -->
+          <div id="modal-error"
+            class="absolute inset-0 hidden flex-col items-center justify-center bg-[#0a0a0a] z-60 p-12 text-center">
+            <div
+              class="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-6 border border-red-500/20">
+              <i class="fa-solid fa-triangle-exclamation text-red-500 text-2xl"></i>
+            </div>
+            <h4 class="text-2xl font-medium text-slate-200 mb-4">Unable to Load Project</h4>
+            <p class="text-slate-500 max-w-md mb-8 leading-relaxed text-sm">
+              This project might be temporarily offline, or your browser is blocking it from being displayed inside the
+              portfolio for security reasons.
+            </p>
+            <div class="flex gap-4">
+              <button id="error-retry-btn"
+                class="px-6 py-2 bg-white/5 border border-white/10 rounded-md text-[10px] font-mono uppercase tracking-widest text-slate-300 hover:bg-white/10 transition-all cursor-pointer">
+                Try Again
+              </button>
+              <a id="modal-external-link" href="#" target="_blank"
+                class="px-6 py-2 bg-accent text-background rounded-md text-[10px] font-mono uppercase tracking-widest font-bold hover:brightness-110 transition-all">
+                Open in New Window
+              </a>
+            </div>
+          </div>
+
+          <iframe id="project-iframe" src="about:blank" class="w-full h-full border-none relative z-10"></iframe>
+        </div>
+
+        <!-- CAROUSEL MODE (Minimalist Redesign) -->
+        <div id="carousel-container"
+          class="absolute inset-0 w-full h-full bg-[#050505] hidden flex items-center justify-center overflow-hidden">
+
+          <!-- Background Logo Effect -->
+          <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+            <img src="/assets/img/ue5-course.png" class="w-2/3 h-2/3 object-contain grayscale" alt="Background Logo">
+          </div>
+
+          <!-- Centered Content -->
+          <div class="relative z-10 max-w-4xl w-full p-12 flex flex-col items-center text-center">
+
+            <!-- Top Title -->
+            <h3 id="carousel-title"
+              class="text-4xl md:text-5xl font-medium text-white mb-4 tracking-tight drop-shadow-xl">
+              Title Placeholder
+            </h3>
+            <p id="carousel-instructor" class="text-sm font-mono text-slate-500 uppercase tracking-widest mb-12">
+              Instructor: Name
+            </p>
+
+            <!-- Description -->
+            <p id="carousel-desc"
+              class="text-slate-300 text-lg md:text-2xl leading-relaxed max-w-2xl drop-shadow-lg mb-16">
+              Description goes here.
+            </p>
+
+            <!-- Navigation Overlay -->
+            <button id="carousel-prev"
+              class="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 w-16 h-16 text-white/20 hover:text-white transition-colors flex items-center justify-center group">
+              <i class="fa-solid fa-chevron-left text-4xl group-hover:-translate-x-1 transition-transform"></i>
+            </button>
+
+            <button id="carousel-next"
+              class="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 w-16 h-16 text-white/20 hover:text-white transition-colors flex items-center justify-center group">
+              <i class="fa-solid fa-chevron-right text-4xl group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <!-- Dots -->
+            <div class="flex gap-4" id="carousel-dots">
+              <!-- Dots injected via JS -->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- IMAGE VIEWER MODE -->
+      <div id="image-viewer-container"
+        class="absolute inset-0 w-full h-full bg-[#050505] hidden items-center justify-center p-8">
+        <img id="modal-single-image" src="" alt="Preview"
+          class="max-w-full max-h-full object-contain shadow-2xl rounded-lg border border-white/5">
+      </div>
+
+      <!-- Modal Footer (Status Bar) -->
+      <div class="h-6 bg-[#1a1a1a] border-t border-white/10 flex items-center px-4 shrink-0 justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+          <p class="text-[9px] font-mono text-slate-600 uppercase tracking-widest">System Live</p>
+        </div>
+        <p class="text-[9px] font-mono text-slate-600 uppercase tracking-widest">Press ESC to exit</p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
